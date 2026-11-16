@@ -1,0 +1,31 @@
+% Auto-generated Q1 Booktabs Benchmark Table (Out-of-Time Crisis Test Set 2020-2022)
+\begin{table*}[htbp]
+\centering
+\caption{Out-of-Time Crisis Benchmark Performance ($\tau \in [2020, 2022]$, $N = 2,083$)}
+\label{tab:main_benchmark}
+\begin{tabular}{llccccccc}
+\toprule
+Regime & Model & AUC-ROC ($\uparrow$) & PR-AUC ($\uparrow$) & Best F1 ($\uparrow$) & Brier ($\downarrow$) & $\text{VR}_{\text{mono}}$ (\%) ($\downarrow$) & $\text{VR}_{\text{bound}}$ (\%) ($\downarrow$) & ECS (\%) ($\uparrow$) \\
+\midrule
+Regime A ($Y^{\text{fwd}}$) & Altman\_Z\_Double\_Prime & 0.6648 & 0.2487 & 0.2901 & 0.2954 & 0.00 & 0.00 & 100.00 \\
+Regime A ($Y^{\text{fwd}}$) & Ohlson\_O\_Score & 0.6453 & 0.2085 & 0.2602 & 0.1550 & 0.00 & 68.75 & 79.38 \\
+Regime A ($Y^{\text{fwd}}$) & LogisticRegression & 0.7732 & 0.3044 & 0.4139 & 0.0854 & 100.00 & 81.25 & 5.63 \\
+Regime A ($Y^{\text{fwd}}$) & RBF\_SVM & 0.7504 & 0.2886 & 0.3574 & 0.0877 & 95.30 & 100.00 & 3.29 \\
+Regime A ($Y^{\text{fwd}}$) & RandomForest & 0.8062 & 0.3433 & 0.4199 & 0.0822 & 0.77 & 100.00 & 69.46 \\
+Regime A ($Y^{\text{fwd}}$) & Unconstrained\_GBDT & 0.7991 & 0.3493 & 0.4201 & 0.0819 & 0.05 & 100.00 & 69.97 \\
+Regime A ($Y^{\text{fwd}}$) & Unconstrained\_MLP & 0.7764 & 0.3021 & 0.3919 & 0.0879 & 71.96 & 68.75 & 29.00 \\
+Regime A ($Y^{\text{fwd}}$) & Mono\_GBDT & 0.8021 & 0.3793 & 0.4187 & 0.0798 & 0.05 & 0.00 & 99.97 \\
+Regime A ($Y^{\text{fwd}}$) & Proposed\_EINN & 0.7870 & 0.3517 & 0.3943 & 0.0848 & 0.00 & 0.00 & 100.00 \\
+\midrule
+Regime B ($Y^{\text{ovl}}$) & Altman\_Z\_Double\_Prime & 0.6440 & 0.2713 & 0.3298 & 0.2917 & 0.00 & 0.00 & 100.00 \\
+Regime B ($Y^{\text{ovl}}$) & Ohlson\_O\_Score & 0.6528 & 0.2713 & 0.3212 & 0.1674 & 0.00 & 68.75 & 79.38 \\
+Regime B ($Y^{\text{ovl}}$) & LogisticRegression & 0.9548 & 0.7351 & 0.7580 & 0.0664 & 94.10 & 37.50 & 22.88 \\
+Regime B ($Y^{\text{ovl}}$) & RBF\_SVM & 0.8864 & 0.6282 & 0.5808 & 0.0969 & 96.54 & 100.00 & 2.42 \\
+Regime B ($Y^{\text{ovl}}$) & RandomForest & 0.9620 & 0.7746 & 0.8011 & 0.0600 & 2.21 & 93.75 & 70.33 \\
+Regime B ($Y^{\text{ovl}}$) & Unconstrained\_GBDT & 0.9640 & 0.7820 & 0.8060 & 0.0496 & 0.00 & 100.00 & 70.00 \\
+Regime B ($Y^{\text{ovl}}$) & Unconstrained\_MLP & 0.9557 & 0.7526 & 0.7425 & 0.0606 & 39.94 & 12.50 & 68.29 \\
+Regime B ($Y^{\text{ovl}}$) & Mono\_GBDT & 0.9648 & 0.7932 & 0.8076 & 0.0490 & 0.00 & 0.00 & 100.00 \\
+Regime B ($Y^{\text{ovl}}$) & Proposed\_EINN & 0.9592 & 0.7658 & 0.7620 & 0.0590 & 0.00 & 0.00 & 100.00 \\
+\bottomrule
+\end{tabular}
+\end{table*}

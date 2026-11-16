@@ -1,0 +1,403 @@
+\begin{thebibliography}{53}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Altman(1968)]{altman1968financial}
+E.~I. Altman.
+\newblock Financial ratios, discriminant analysis and the prediction of
+  corporate bankruptcy.
+\newblock \emph{The Journal of Finance}, 23\penalty0 (4):\penalty0 589--609,
+  1968.
+\newblock \doi{10.1111/j.1540-6261.1968.tb00843.x}.
+
+\bibitem[Altman et~al.(1995)Altman, Hartzell, and Peck]{altman1995emerging}
+E.~I. Altman, J.~Hartzell, and M.~Peck.
+\newblock An emerging market credit scoring system for corporate bonds.
+\newblock In \emph{Emerging Markets Capital Flows}, pages 1--21. New York
+  University Salomon Center, 1995.
+
+\bibitem[Altman et~al.(2017)Altman, Iwanicz-Drozdowska, Laitinen, and
+  Suvas]{altman2017financial}
+E.~I. Altman, M.~Iwanicz-Drozdowska, E.~K. Laitinen, and A.~Suvas.
+\newblock Financial distress prediction in an international context: A review
+  and empirical analysis of altman's z-score model.
+\newblock \emph{Journal of International Financial Management \& Accounting},
+  28\penalty0 (2):\penalty0 131--171, 2017.
+\newblock \doi{10.1111/jifm.12053}.
+
+\bibitem[Asquith et~al.(1994)Asquith, Gertner, and
+  Scharfstein]{asquith1994anatomy}
+P.~Asquith, R.~Gertner, and D.~Scharfstein.
+\newblock Anatomy of financial distress: An examination of junk-bond issuers.
+\newblock \emph{The Quarterly Journal of Economics}, 109\penalty0 (3):\penalty0
+  625--658, 1994.
+\newblock \doi{10.2307/2118416}.
+
+\bibitem[Bailey et~al.(2014)Bailey, Borwein, L{\'o}pez~de Prado, and
+  Zhu]{bailey2014pseudo}
+D.~H. Bailey, J.~M. Borwein, M.~L{\'o}pez~de Prado, and Q.~J. Zhu.
+\newblock Pseudo-mathematics and financial charlatanism: The effects of
+  backtest overfitting on out-of-sample performance.
+\newblock \emph{Notices of the American Mathematical Society}, 61\penalty0
+  (5):\penalty0 458--471, 2014.
+\newblock \doi{10.1090/noti1105}.
+
+\bibitem[Barboza et~al.(2017)Barboza, Kimura, and Altman]{barboza2017machine}
+F.~Barboza, H.~Kimura, and E.~Altman.
+\newblock Machine learning models and bankruptcy prediction.
+\newblock \emph{Expert Systems with Applications}, 83:\penalty0 405--417, 2017.
+\newblock \doi{10.1016/j.eswa.2017.04.006}.
+
+\bibitem[Bauer and Agarwal(2014)]{bauer2014are}
+J.~Bauer and V.~Agarwal.
+\newblock Are hazard models superior to traditional bankruptcy prediction
+  approaches? a comprehensive test.
+\newblock \emph{Journal of Banking \& Finance}, 40:\penalty0 432--442, 2014.
+\newblock \doi{10.1016/j.jbankfin.2013.12.013}.
+
+\bibitem[Beaver(1966)]{beaver1966financial}
+W.~H. Beaver.
+\newblock Financial ratios as predictors of failure.
+\newblock \emph{Journal of Accounting Research}, 4:\penalty0 71--111, 1966.
+\newblock \doi{10.2307/2490171}.
+
+\bibitem[Bharath and Shumway(2008)]{bharath2008forecasting}
+S.~T. Bharath and T.~Shumway.
+\newblock Forecasting default with the merton distance to default model.
+\newblock \emph{The Review of Financial Studies}, 21\penalty0 (3):\penalty0
+  1339--1369, 2008.
+\newblock \doi{10.1093/rfs/hhn044}.
+
+\bibitem[Breiman(2001)]{breiman2001random}
+L.~Breiman.
+\newblock Random forests.
+\newblock \emph{Machine Learning}, 45\penalty0 (1):\penalty0 5--32, 2001.
+\newblock \doi{10.1023/A:1010933404324}.
+
+\bibitem[B{\"u}cker et~al.(2022)B{\"u}cker, Szepannek, Gosiewska, and
+  Biecek]{bucker2022transparency}
+M.~B{\"u}cker, G.~Szepannek, A.~Gosiewska, and P.~Biecek.
+\newblock Transparency, auditability, and explainability of machine learning
+  models in credit scoring.
+\newblock \emph{Journal of the Operational Research Society}, 73\penalty0
+  (1):\penalty0 70--90, 2022.
+\newblock \doi{10.1080/01605682.2021.1922098}.
+
+\bibitem[Bussmann et~al.(2021)Bussmann, Giudici, Marinelli, and
+  Papenbrock]{bussmann2021explainable}
+N.~Bussmann, P.~Giudici, D.~Marinelli, and J.~Papenbrock.
+\newblock Explainable machine learning in credit risk management.
+\newblock \emph{Computational Economics}, 57\penalty0 (1):\penalty0 203--216,
+  2021.
+\newblock \doi{10.1007/s10614-020-10042-0}.
+
+\bibitem[Campbell et~al.(2008)Campbell, Hilscher, and
+  Szilagyi]{campbell2008search}
+J.~Y. Campbell, J.~Hilscher, and J.~Szilagyi.
+\newblock In search of distress risk.
+\newblock \emph{The Journal of Finance}, 63\penalty0 (6):\penalty0 2899--2939,
+  2008.
+\newblock \doi{10.1111/j.1540-6261.2008.01416.x}.
+
+\bibitem[Cano et~al.(2019)Cano, Guti{\'e}rrez, Krawczyk, Wo{\'z}niak, and
+  Garc{\'\i}a]{cano2019monotonic}
+J.-R. Cano, P.~A. Guti{\'e}rrez, B.~Krawczyk, M.~Wo{\'z}niak, and
+  S.~Garc{\'\i}a.
+\newblock Monotonic classification: An overview on algorithms, performance
+  measures and data sets.
+\newblock \emph{WIREs Data Mining and Knowledge Discovery}, 9\penalty0
+  (1):\penalty0 e1288, 2019.
+\newblock \doi{10.1002/widm.1288}.
+
+\bibitem[Chava and Jarrow(2004)]{chava2004bankruptcy}
+S.~Chava and R.~A. Jarrow.
+\newblock Bankruptcy prediction with industry effects.
+\newblock \emph{Review of Finance}, 8\penalty0 (4):\penalty0 537--569, 2004.
+\newblock \doi{10.1093/rof/8.4.537}.
+
+\bibitem[Chen and Guestrin(2016)]{chen2016xgboost}
+T.~Chen and C.~Guestrin.
+\newblock {XGBoost}: A scalable tree boosting system.
+\newblock In \emph{Proceedings of the 22nd ACM SIGKDD International Conference
+  on Knowledge Discovery and Data Mining}, pages 785--794, 2016.
+\newblock \doi{10.1145/2939672.2939785}.
+
+\bibitem[du~Jardin(2015)]{dujardin2015bankruptcy}
+P.~du~Jardin.
+\newblock Bankruptcy prediction using terminal failure processes.
+\newblock \emph{European Journal of Operational Research}, 242\penalty0
+  (1):\penalty0 286--303, 2015.
+\newblock \doi{10.1016/j.ejor.2014.09.059}.
+
+\bibitem[Duffie et~al.(2007)Duffie, Saita, and Wang]{duffie2007multi}
+D.~Duffie, L.~Saita, and K.~Wang.
+\newblock Multi-period corporate default prediction with stochastic covariates.
+\newblock \emph{Journal of Financial Economics}, 83\penalty0 (3):\penalty0
+  635--665, 2007.
+\newblock \doi{10.1016/j.jfineco.2005.10.011}.
+
+\bibitem[Dumitrescu et~al.(2022)Dumitrescu, Hu{\'e}, Hurlin, and
+  Tokpavi]{dumitrescu2022machine}
+E.~Dumitrescu, S.~Hu{\'e}, C.~Hurlin, and S.~Tokpavi.
+\newblock Machine learning for credit scoring: Improving logistic regression
+  with non-linear decision-tree effects.
+\newblock \emph{European Journal of Operational Research}, 297\penalty0
+  (3):\penalty0 1178--1192, 2022.
+\newblock \doi{10.1016/j.ejor.2021.06.053}.
+
+\bibitem[Geng et~al.(2015)Geng, Bose, and Chen]{geng2015prediction}
+R.~Geng, I.~Bose, and X.~Chen.
+\newblock Prediction of financial distress: An empirical study of listed
+  chinese companies using data mining.
+\newblock \emph{European Journal of Operational Research}, 241\penalty0
+  (1):\penalty0 236--247, 2015.
+\newblock \doi{10.1016/j.ejor.2014.08.016}.
+
+\bibitem[Gunnarsson et~al.(2021)Gunnarsson, vanden Broucke, Baesens,
+  {\'O}skarsd{\'o}ttir, and Lemahieu]{gunnarsson2021deep}
+B.~R. Gunnarsson, S.~vanden Broucke, B.~Baesens, M.~{\'O}skarsd{\'o}ttir, and
+  W.~Lemahieu.
+\newblock Deep learning for credit scoring: Do or don't?
+\newblock \emph{European Journal of Operational Research}, 295\penalty0
+  (1):\penalty0 292--305, 2021.
+\newblock \doi{10.1016/j.ejor.2021.03.006}.
+
+\bibitem[Gupta et~al.(2016)Gupta, Cotter, Pfeifer, Voevodski, Canini, Mangylov,
+  Moczydlowski, and Van~Esbroeck]{gupta2016monotonic}
+M.~Gupta, A.~Cotter, J.~Pfeifer, K.~Voevodski, K.~Canini, A.~Mangylov,
+  W.~Moczydlowski, and A.~Van~Esbroeck.
+\newblock Monotonic calibrated interpolated look-up tables.
+\newblock \emph{Journal of Machine Learning Research}, 17\penalty0
+  (109):\penalty0 1--47, 2016.
+
+\bibitem[Hillegeist et~al.(2004)Hillegeist, Keating, Cram, and
+  Lundstedt]{hillegeist2004assessing}
+S.~A. Hillegeist, E.~K. Keating, D.~P. Cram, and K.~G. Lundstedt.
+\newblock Assessing the probability of bankruptcy.
+\newblock \emph{Review of Accounting Studies}, 9\penalty0 (1):\penalty0 5--34,
+  2004.
+\newblock \doi{10.1023/B:RAST.0000013627.90884.b7}.
+
+\bibitem[Hosaka(2019)]{hosaka2019bankruptcy}
+T.~Hosaka.
+\newblock Bankruptcy prediction using imaged financial ratios and convolutional
+  neural networks.
+\newblock \emph{Expert Systems with Applications}, 117:\penalty0 287--299,
+  2019.
+\newblock \doi{10.1016/j.eswa.2018.09.039}.
+
+\bibitem[Jones et~al.(2017)Jones, Johnstone, and Wilson]{jones2017predicting}
+S.~Jones, D.~Johnstone, and R.~Wilson.
+\newblock Predicting corporate bankruptcy: An evaluation of alternative
+  statistical frameworks.
+\newblock \emph{Journal of Business Finance \& Accounting}, 44\penalty0
+  (1-2):\penalty0 3--34, 2017.
+\newblock \doi{10.1111/jbfa.12218}.
+
+\bibitem[Karniadakis et~al.(2021)Karniadakis, Kevrekidis, Lu, Perdikaris, Wang,
+  and Yang]{karniadakis2021physics}
+G.~E. Karniadakis, I.~G. Kevrekidis, L.~Lu, P.~Perdikaris, S.~Wang, and
+  L.~Yang.
+\newblock Physics-informed machine learning.
+\newblock \emph{Nature Reviews Physics}, 3\penalty0 (6):\penalty0 422--440,
+  2021.
+\newblock \doi{10.1038/s42254-021-00314-5}.
+
+\bibitem[Ke et~al.(2017)Ke, Meng, Finley, Wang, Chen, Ma, Ye, and
+  Liu]{ke2017lightgbm}
+G.~Ke, Q.~Meng, T.~Finley, T.~Wang, W.~Chen, W.~Ma, Q.~Ye, and T.-Y. Liu.
+\newblock {LightGBM}: A highly efficient gradient boosting decision tree.
+\newblock In \emph{Advances in Neural Information Processing Systems
+  (NeurIPS)}, volume~30, pages 3146--3154, 2017.
+
+\bibitem[Kraus and Litzenberger(1973)]{kraus1973state}
+A.~Kraus and R.~H. Litzenberger.
+\newblock A state-preference model of optimal financial leverage.
+\newblock \emph{The Journal of Finance}, 28\penalty0 (4):\penalty0 911--922,
+  1973.
+\newblock \doi{10.1111/j.1540-6261.1973.tb01415.x}.
+
+\bibitem[Kumar and Ravi(2007)]{kumar2007bankruptcy}
+P.~R. Kumar and V.~Ravi.
+\newblock Bankruptcy prediction in banks and firms via statistical and
+  intelligent techniques--a review.
+\newblock \emph{European Journal of Operational Research}, 180\penalty0
+  (1):\penalty0 1--28, 2007.
+\newblock \doi{10.1016/j.ejor.2006.08.043}.
+
+\bibitem[Lessmann et~al.(2015)Lessmann, Baesens, Seow, and
+  Thomas]{lessmann2015benchmarking}
+S.~Lessmann, B.~Baesens, H.-V. Seow, and L.~C. Thomas.
+\newblock Benchmarking state-of-the-art classification algorithms for credit
+  scoring: An update of research.
+\newblock \emph{European Journal of Operational Research}, 247\penalty0
+  (1):\penalty0 124--136, 2015.
+\newblock \doi{10.1016/j.ejor.2015.05.030}.
+
+\bibitem[L{\'o}pez~de Prado(2018)]{lopez2018advances}
+M.~L{\'o}pez~de Prado.
+\newblock \emph{Advances in Financial Machine Learning}.
+\newblock John Wiley \& Sons, 2018.
+
+\bibitem[Lundberg and Lee(2017)]{lundberg2017unified}
+S.~M. Lundberg and S.-I. Lee.
+\newblock A unified approach to interpreting model predictions.
+\newblock In \emph{Advances in Neural Information Processing Systems
+  (NeurIPS)}, volume~30, pages 4765--4774, 2017.
+
+\bibitem[Mai et~al.(2019)Mai, Tian, Lee, and Ma]{mai2019deep}
+F.~Mai, S.~Tian, C.~Lee, and L.~Ma.
+\newblock Deep learning for bankruptcy prediction: Textual disclosures and
+  accounting variables.
+\newblock \emph{Journal of Banking \& Finance}, 100:\penalty0 262--282, 2019.
+\newblock \doi{10.1016/j.jbankfin.2019.01.003}.
+
+\bibitem[Merton(1974)]{merton1974pricing}
+R.~C. Merton.
+\newblock On the pricing of corporate debt: The risk structure of interest
+  rates.
+\newblock \emph{The Journal of Finance}, 29\penalty0 (2):\penalty0 449--470,
+  1974.
+\newblock \doi{10.1111/j.1540-6261.1974.tb03058.x}.
+
+\bibitem[Myers(1984)]{myers1984capital}
+S.~C. Myers.
+\newblock The capital structure puzzle.
+\newblock \emph{The Journal of Finance}, 39\penalty0 (3):\penalty0 574--592,
+  1984.
+\newblock \doi{10.1111/j.1540-6261.1984.tb03646.x}.
+
+\bibitem[Ohlson(1980)]{ohlson1980financial}
+J.~A. Ohlson.
+\newblock Financial ratios and the probabilistic prediction of bankruptcy.
+\newblock \emph{Journal of Accounting Research}, 18\penalty0 (1):\penalty0
+  109--131, 1980.
+\newblock \doi{10.2307/2490395}.
+
+\bibitem[Pham Vo~Ninh et~al.(2018)Pham Vo~Ninh, Do~Thanh, and
+  Vo~Hong]{pham2018financial}
+B.~Pham Vo~Ninh, T.~Do~Thanh, and D.~Vo~Hong.
+\newblock Financial distress and bankruptcy prediction: An appropriate model
+  for listed firms in {Vietnam}.
+\newblock \emph{Economic Systems}, 42\penalty0 (4):\penalty0 616--624, 2018.
+\newblock \doi{10.1016/j.ecosys.2018.05.002}.
+
+\bibitem[Pindado et~al.(2008)Pindado, Rodrigues, and de~la
+  Torre]{pindado2008estimating}
+J.~Pindado, L.~Rodrigues, and C.~de~la Torre.
+\newblock Estimating financial distress likelihood.
+\newblock \emph{Journal of Business Research}, 61\penalty0 (9):\penalty0
+  995--1003, 2008.
+\newblock \doi{10.1016/j.jbusres.2007.10.006}.
+
+\bibitem[Prokhorenkova et~al.(2018)Prokhorenkova, Gusev, Vorobev, Dorogush, and
+  Gulin]{prokhorenkova2018catboost}
+L.~Prokhorenkova, G.~Gusev, A.~Vorobev, A.~V. Dorogush, and A.~Gulin.
+\newblock {CatBoost}: Unbiased boosting with categorical features.
+\newblock In \emph{Advances in Neural Information Processing Systems
+  (NeurIPS)}, volume~31, pages 6638--6648, 2018.
+
+\bibitem[Raissi et~al.(2019)Raissi, Perdikaris, and
+  Karniadakis]{raissi2019physics}
+M.~Raissi, P.~Perdikaris, and G.~E. Karniadakis.
+\newblock Physics-informed neural networks: A deep learning framework for
+  solving forward and inverse problems involving nonlinear partial differential
+  equations.
+\newblock \emph{Journal of Computational Physics}, 378:\penalty0 686--707,
+  2019.
+\newblock \doi{10.1016/j.jcp.2018.10.045}.
+
+\bibitem[Runje and Shankaranarayana(2023)]{runje2023constrained}
+D.~Runje and S.~M. Shankaranarayana.
+\newblock Constrained monotonic neural networks.
+\newblock In \emph{Proceedings of the 40th International Conference on Machine
+  Learning (ICML)}, volume 202, pages 29338--29353. PMLR, 2023.
+
+\bibitem[Shumway(2001)]{shumway2001forecasting}
+T.~Shumway.
+\newblock Forecasting bankruptcy more accurately: A simple hazard model.
+\newblock \emph{The Journal of Business}, 74\penalty0 (1):\penalty0 101--124,
+  2001.
+\newblock \doi{10.1086/209665}.
+
+\bibitem[Sill(1997)]{sill1997monotonic}
+J.~Sill.
+\newblock Monotonic networks.
+\newblock In \emph{Advances in Neural Information Processing Systems (NIPS)},
+  volume~10, pages 661--667, 1997.
+
+\bibitem[Sundararajan et~al.(2017)Sundararajan, Taly, and
+  Yan]{sundararajan2017axiomatic}
+M.~Sundararajan, A.~Taly, and Q.~Yan.
+\newblock Axiomatic attribution for deep networks.
+\newblock In \emph{Proceedings of the 34th International Conference on Machine
+  Learning (ICML)}, volume~70, pages 3319--3328. PMLR, 2017.
+
+\bibitem[Tinoco and Wilson(2013)]{tinoco2013financial}
+M.~H. Tinoco and N.~Wilson.
+\newblock Financial distress and bankruptcy prediction among listed companies
+  using accounting, market and macroeconomic variables.
+\newblock \emph{International Review of Financial Analysis}, 30:\penalty0
+  394--419, 2013.
+\newblock \doi{10.1016/j.irfa.2013.02.013}.
+
+\bibitem[Tran et~al.(2022)Tran, Le, Nguyen, and Nguyen]{tran2022explainable}
+K.~L. Tran, H.~A. Le, T.~H. Nguyen, and D.~T. Nguyen.
+\newblock Explainable machine learning for financial distress prediction:
+  Evidence from {Vietnam}.
+\newblock \emph{Data}, 7\penalty0 (11):\penalty0 160, 2022.
+\newblock \doi{10.3390/data7110160}.
+
+\bibitem[Tran et~al.(2023)Tran, Nguyen, Le, Vu, and Vo]{tran2023examining}
+T.~Tran, N.~H. Nguyen, B.~T. Le, N.~T. Vu, and D.~H. Vo.
+\newblock Examining financial distress of the {Vietnamese} listed firms using
+  accounting-based models.
+\newblock \emph{PLOS ONE}, 18\penalty0 (5):\penalty0 e0284451, 2023.
+\newblock \doi{10.1371/journal.pone.0284451}.
+
+\bibitem[Veganzones and S{\'e}verin(2018)]{veganzones2018investigation}
+D.~Veganzones and E.~S{\'e}verin.
+\newblock An investigation of bankruptcy prediction in imbalanced datasets.
+\newblock \emph{Decision Support Systems}, 112:\penalty0 111--124, 2018.
+\newblock \doi{10.1016/j.dss.2018.06.011}.
+
+\bibitem[Vo et~al.(2019)Vo, Pham, Ho, and McAleer]{vo2019corporate}
+D.~H. Vo, B.~N.~V. Pham, C.~M. Ho, and M.~McAleer.
+\newblock Corporate financial distress of industry level listings in {Vietnam}.
+\newblock \emph{Journal of Risk and Financial Management}, 12\penalty0
+  (4):\penalty0 155, 2019.
+\newblock \doi{10.3390/jrfm12040155}.
+
+\bibitem[Vu et~al.(2023)Vu, Nguyen, Tran, Le, and Vo]{vu2023lasso}
+N.~T. Vu, N.~H. Nguyen, T.~Tran, B.~T. Le, and D.~H. Vo.
+\newblock A {LASSO}-based model for financial distress of the {Vietnamese}
+  listed firms: Does the covid-19 pandemic matter?
+\newblock \emph{Cogent Economics \& Finance}, 11\penalty0 (1):\penalty0
+  2210361, 2023.
+\newblock \doi{10.1080/23322039.2023.2210361}.
+
+\bibitem[You et~al.(2017)You, Ding, Canini, Pfeifer, and Gupta]{you2017deep}
+S.~You, D.~Ding, K.~Canini, J.~Pfeifer, and M.~Gupta.
+\newblock Deep lattice networks and partial monotonic functions.
+\newblock In \emph{Advances in Neural Information Processing Systems
+  (NeurIPS)}, volume~30, pages 2981--2989, 2017.
+
+\bibitem[Zi{\k{e}}ba et~al.(2016)Zi{\k{e}}ba, Tomczak, and
+  Tomczak]{zieba2016ensemble}
+M.~Zi{\k{e}}ba, S.~K. Tomczak, and J.~M. Tomczak.
+\newblock Ensemble boosted trees with synthetic features generation in
+  application to bankruptcy prediction.
+\newblock \emph{Expert Systems with Applications}, 58:\penalty0 93--101, 2016.
+\newblock \doi{10.1016/j.eswa.2016.04.001}.
+
+\bibitem[Zmijewski(1984)]{zmijewski1984methodological}
+M.~E. Zmijewski.
+\newblock Methodological issues related to the estimation of financial distress
+  prediction models.
+\newblock \emph{Journal of Accounting Research}, 22:\penalty0 59--82, 1984.
+\newblock \doi{10.2307/2490859}.
+
+\end{thebibliography}

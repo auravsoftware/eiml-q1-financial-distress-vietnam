@@ -1,0 +1,240 @@
+{
+  "xai_feature_attribution_ranking": [
+    {
+      "feature": "roe",
+      "monotonic_axiom": 0,
+      "einn_importance_share_pct": 12.95,
+      "mlp_importance_share_pct": 8.57,
+      "mlp_gradient_sign_violation_pct": 0.0,
+      "einn_gradient_sign_violation_pct": 0.0
+    },
+    {
+      "feature": "opex_to_sales",
+      "monotonic_axiom": 0,
+      "einn_importance_share_pct": 10.02,
+      "mlp_importance_share_pct": 8.44,
+      "mlp_gradient_sign_violation_pct": 0.0,
+      "einn_gradient_sign_violation_pct": 0.0
+    },
+    {
+      "feature": "roa",
+      "monotonic_axiom": -1,
+      "einn_importance_share_pct": 7.84,
+      "mlp_importance_share_pct": 13.03,
+      "mlp_gradient_sign_violation_pct": 0.0,
+      "einn_gradient_sign_violation_pct": 0.0
+    },
+    {
+      "feature": "wc_to_asset",
+      "monotonic_axiom": -1,
+      "einn_importance_share_pct": 7.4,
+      "mlp_importance_share_pct": 4.95,
+      "mlp_gradient_sign_violation_pct": 17.04,
+      "einn_gradient_sign_violation_pct": 0.0
+    },
+    {
+      "feature": "icr_op",
+      "monotonic_axiom": -1,
+      "einn_importance_share_pct": 6.49,
+      "mlp_importance_share_pct": 6.75,
+      "mlp_gradient_sign_violation_pct": 0.72,
+      "einn_gradient_sign_violation_pct": 0.0
+    },
+    {
+      "feature": "op_margin",
+      "monotonic_axiom": 0,
+      "einn_importance_share_pct": 6.29,
+      "mlp_importance_share_pct": 5.05,
+      "mlp_gradient_sign_violation_pct": 0.0,
+      "einn_gradient_sign_violation_pct": 0.0
+    },
+    {
+      "feature": "rec_turnover",
+      "monotonic_axiom": 0,
+      "einn_importance_share_pct": 6.11,
+      "mlp_importance_share_pct": 5.39,
+      "mlp_gradient_sign_violation_pct": 0.0,
+      "einn_gradient_sign_violation_pct": 0.0
+    },
+    {
+      "feature": "ebit_to_asset",
+      "monotonic_axiom": -1,
+      "einn_importance_share_pct": 6.02,
+      "mlp_importance_share_pct": 3.23,
+      "mlp_gradient_sign_violation_pct": 31.11,
+      "einn_gradient_sign_violation_pct": 0.0
+    },
+    {
+      "feature": "quick_ratio",
+      "monotonic_axiom": 0,
+      "einn_importance_share_pct": 5.91,
+      "mlp_importance_share_pct": 8.12,
+      "mlp_gradient_sign_violation_pct": 0.0,
+      "einn_gradient_sign_violation_pct": 0.0
+    },
+    {
+      "feature": "asset_turnover",
+      "monotonic_axiom": 0,
+      "einn_importance_share_pct": 5.42,
+      "mlp_importance_share_pct": 5.5,
+      "mlp_gradient_sign_violation_pct": 0.0,
+      "einn_gradient_sign_violation_pct": 0.0
+    },
+    {
+      "feature": "shortdebt_to_debt",
+      "monotonic_axiom": 1,
+      "einn_importance_share_pct": 5.3,
+      "mlp_importance_share_pct": 3.27,
+      "mlp_gradient_sign_violation_pct": 7.44,
+      "einn_gradient_sign_violation_pct": 0.0
+    },
+    {
+      "feature": "cash_to_debt",
+      "monotonic_axiom": 0,
+      "einn_importance_share_pct": 5.17,
+      "mlp_importance_share_pct": 4.42,
+      "mlp_gradient_sign_violation_pct": 0.0,
+      "einn_gradient_sign_violation_pct": 0.0
+    },
+    {
+      "feature": "inv_turnover",
+      "monotonic_axiom": 0,
+      "einn_importance_share_pct": 3.38,
+      "mlp_importance_share_pct": 3.03,
+      "mlp_gradient_sign_violation_pct": 0.0,
+      "einn_gradient_sign_violation_pct": 0.0
+    },
+    {
+      "feature": "delta_debt_to_asset",
+      "monotonic_axiom": 0,
+      "einn_importance_share_pct": 3.29,
+      "mlp_importance_share_pct": 3.61,
+      "mlp_gradient_sign_violation_pct": 0.0,
+      "einn_gradient_sign_violation_pct": 0.0
+    },
+    {
+      "feature": "delta_icr_op",
+      "monotonic_axiom": 0,
+      "einn_importance_share_pct": 3.27,
+      "mlp_importance_share_pct": 3.79,
+      "mlp_gradient_sign_violation_pct": 0.0,
+      "einn_gradient_sign_violation_pct": 0.0
+    },
+    {
+      "feature": "debt_to_asset",
+      "monotonic_axiom": 1,
+      "einn_importance_share_pct": 2.11,
+      "mlp_importance_share_pct": 4.21,
+      "mlp_gradient_sign_violation_pct": 67.16,
+      "einn_gradient_sign_violation_pct": 0.0
+    },
+    {
+      "feature": "cash_to_asset",
+      "monotonic_axiom": 0,
+      "einn_importance_share_pct": 1.86,
+      "mlp_importance_share_pct": 3.01,
+      "mlp_gradient_sign_violation_pct": 0.0,
+      "einn_gradient_sign_violation_pct": 0.0
+    },
+    {
+      "feature": "curr_ratio",
+      "monotonic_axiom": 0,
+      "einn_importance_share_pct": 1.16,
+      "mlp_importance_share_pct": 5.63,
+      "mlp_gradient_sign_violation_pct": 0.0,
+      "einn_gradient_sign_violation_pct": 0.0
+    }
+  ],
+  "crisis_2022_early_warning_case_studies": [
+    {
+      "ticker": "AMD",
+      "feature_year_t": 2021,
+      "outcome_year_tau": 2022,
+      "icb2": "Bất động sản L2",
+      "debt_to_asset_2021": 0.2388,
+      "shortdebt_to_debt_2021": 0.9727,
+      "icr_op_2021": 0.8716,
+      "roa_2021": 0.0043,
+      "altman_z_double_prime_2021": 10.2741,
+      "einn_forward_risk_prob": 0.183,
+      "einn_persistent_risk_prob": 0.2901,
+      "unconstrained_mlp_prob": 0.2945,
+      "actual_2022_outcome": "Regulatory Delisting / Suspension / Bond Default"
+    },
+    {
+      "ticker": "BII",
+      "feature_year_t": 2021,
+      "outcome_year_tau": 2022,
+      "icb2": "Bất động sản L2",
+      "debt_to_asset_2021": 0.359,
+      "shortdebt_to_debt_2021": 0.9914,
+      "icr_op_2021": -0.3796,
+      "roa_2021": 0.0326,
+      "altman_z_double_prime_2021": 5.8065,
+      "einn_forward_risk_prob": 0.1956,
+      "einn_persistent_risk_prob": 0.6842,
+      "unconstrained_mlp_prob": 0.2336,
+      "actual_2022_outcome": "Regulatory Delisting / Suspension / Bond Default"
+    },
+    {
+      "ticker": "FLC",
+      "feature_year_t": 2021,
+      "outcome_year_tau": 2022,
+      "icb2": "Bất động sản L2",
+      "debt_to_asset_2021": 0.7122,
+      "shortdebt_to_debt_2021": 0.6629,
+      "icr_op_2021": -1.1204,
+      "roa_2021": 0.0025,
+      "altman_z_double_prime_2021": 3.9259,
+      "einn_forward_risk_prob": 0.2633,
+      "einn_persistent_risk_prob": 0.6985,
+      "unconstrained_mlp_prob": 0.2307,
+      "actual_2022_outcome": "Regulatory Delisting / Suspension / Bond Default"
+    },
+    {
+      "ticker": "GAB",
+      "feature_year_t": 2021,
+      "outcome_year_tau": 2022,
+      "icb2": "Xây dựng và Vật liệu L2",
+      "debt_to_asset_2021": 0.437,
+      "shortdebt_to_debt_2021": 1.0,
+      "icr_op_2021": 1.1758,
+      "roa_2021": 0.0064,
+      "altman_z_double_prime_2021": 5.9993,
+      "einn_forward_risk_prob": 0.2135,
+      "einn_persistent_risk_prob": 0.1992,
+      "unconstrained_mlp_prob": 0.1215,
+      "actual_2022_outcome": "Regulatory Delisting / Suspension / Bond Default"
+    },
+    {
+      "ticker": "HAI",
+      "feature_year_t": 2021,
+      "outcome_year_tau": 2022,
+      "icb2": "Hóa chất L2",
+      "debt_to_asset_2021": 0.3505,
+      "shortdebt_to_debt_2021": 0.9747,
+      "icr_op_2021": -15.0,
+      "roa_2021": -0.294,
+      "altman_z_double_prime_2021": 5.5046,
+      "einn_forward_risk_prob": 0.6512,
+      "einn_persistent_risk_prob": 0.8115,
+      "unconstrained_mlp_prob": 0.5555,
+      "actual_2022_outcome": "Regulatory Delisting / Suspension / Bond Default"
+    },
+    {
+      "ticker": "VKC",
+      "feature_year_t": 2021,
+      "outcome_year_tau": 2022,
+      "icb2": "Ô tô và phụ tùng L2",
+      "debt_to_asset_2021": 0.6423,
+      "shortdebt_to_debt_2021": 0.7272,
+      "icr_op_2021": 0.9627,
+      "roa_2021": 0.0034,
+      "altman_z_double_prime_2021": 6.124,
+      "einn_forward_risk_prob": 0.1211,
+      "einn_persistent_risk_prob": 0.1689,
+      "unconstrained_mlp_prob": 0.2041,
+      "actual_2022_outcome": "Regulatory Delisting / Suspension / Bond Default"
+    }
+  ]
+}

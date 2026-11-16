@@ -1,0 +1,70 @@
+# ==============================================================================
+# EIML-Distress Q1 Experimental Configuration (Zero-Look-Ahead & Forensic Clean)
+# Target Journals: Expert Systems with Applications (ESWA) / IRFA
+# ==============================================================================
+
+project:
+  name: "EIML-Distress-Q1"
+  seed: 42
+  raw_data_path: "/home/antigravity/upload/data-financial-0601.xlsx"
+  processed_dir: "/home/antigravity/09_PAPER_Q1_BOND/data/processed"
+  results_dir: "/home/antigravity/09_PAPER_Q1_BOND/results"
+
+forensic_cleaning:
+  drop_duplicate_costofgood_col_idx: 26       # Col 25 and Col 26 are 100% identical
+  resolve_mcg_mco_splice: "reconcile_or_isolate" # Isolate 1-row MCO (2022) or keep 720 canonical firms
+  fix_epoch_1900_listedyear: true             # Replace Listedyear == 1900 with first valid filing year
+  forward_fill_static_2022_metadata: true     # Propagate Listedyear to 2022 while flagging Stockexchange==''
+  normalize_expense_signs: true               # Enforce |expense| outflow magnitude on cols 25,27,28,29,30
+  impute_missing_interest_from_finexp: true   # Fit median(|interestexp|/|financialexp|) strictly on Train set
+  enforce_physical_ratio_bounds: true         # Clip ShortDebt/Debt to [0, 1] and turnovers to >= 0
+  capture_2022_delisting_attrition: true      # Prevent survivorship bias on FLC, HAI, AMD, GAB, BII, VKC
+
+look_ahead_prevention:
+  enforce_post_listing_filter: true           # Require Year_t >= Listedyear_i (removes 1,415 pre-IPO backfill rows)
+  audit_reporting_lag_months: 4               # Audited FY_t reports released by March 31 / April 1 of t+1
+  split_by_outcome_year_tau: true             # Index splits by outcome year tau = t + 1 (zero boundary leakage)
+  train_outcome_years: [2009, 2017]           # Feature years t in [2008, 2016] -> Labels realized <= 2017
+  val_outcome_years: [2018, 2019]             # Feature years t in [2017, 2018] -> Pre-COVID hyperparameter tuning
+  test_outcome_years: [2020, 2022]            # Feature years t in [2019, 2021] -> COVID-19 & 2022 Bond Crisis OOD test
+  winsorize_quantiles: [0.01, 0.99]           # Fitted strictly on Train Set (tau <= 2017)
+  standardize_zscore_on_train_only: true      # Fitted strictly on Train Set (tau <= 2017)
+
+features:
+  names:
+    - "curr_ratio"          # 0: Current Ratio (Liquidity)                 [Mono: 0]
+    - "quick_ratio"         # 1: Quick Ratio (Liquidity)                   [Mono: 0]
+    - "cash_to_asset"       # 2: Cash / Total Assets (Liquidity)           [Mono: 0]
+    - "wc_to_asset"         # 3: Working Capital / Total Assets            [Mono: -1]
+    - "debt_to_asset"       # 4: Total Debt / Total Assets (Solvency)      [Mono: +1]
+    - "shortdebt_to_debt"   # 5: Short-Term Debt / Total Debt (Solvency)   [Mono: +1]
+    - "icr_op"              # 6: Operating EBIT / Interest Expense         [Mono: -1]
+    - "cash_to_debt"        # 7: Cash / Total Debt (Solvency)              [Mono: 0]
+    - "roa"                 # 8: Net Profit / Total Assets (Profitability) [Mono: -1]
+    - "roe"                 # 9: Return on Equity (Profitability)          [Mono: 0]
+    - "ebit_to_asset"       # 10: Operating EBIT / Total Assets            [Mono: -1]
+    - "op_margin"           # 11: Operating EBIT / Net Sales               [Mono: 0]
+    - "asset_turnover"      # 12: Net Sales / Total Assets (Efficiency)    [Mono: 0]
+    - "rec_turnover"        # 13: Receivables Turnover (Efficiency)        [Mono: 0]
+    - "inv_turnover"        # 14: Inventory Turnover (Efficiency)          [Mono: 0]
+    - "opex_to_sales"       # 15: (Selling + Admin Exp) / Net Sales        [Mono: 0]
+    - "delta_debt_to_asset" # 16: 1-Year Change in Debt / Asset            [Mono: 0]
+    - "delta_icr_op"        # 17: 1-Year Change in Operating ICR           [Mono: 0]
+  monotonic_constraints:
+    wc_to_asset: -1
+    debt_to_asset: 1
+    shortdebt_to_debt: 1
+    icr_op: -1
+    roa: -1
+    ebit_to_asset: -1
+
+eiml_model:
+  hidden_dim: 16
+  positive_class_weight: 2.0
+  lambda_1_monotonic: 2.5
+  lambda_2_boundary: 1.8
+  tau_altman_boundary: 0.70
+  hard_cone_projection: true
+  learning_rate: 0.0035
+  weight_decay: 0.001
+  epochs: 35

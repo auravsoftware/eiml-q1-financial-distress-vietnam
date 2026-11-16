@@ -1,0 +1,67 @@
+{
+  "all_checks_passed": true,
+  "verification_checks": [
+    {
+      "check_id": 1,
+      "name": "Duplicate Column Removal & MCG/MCO Splice Resolution",
+      "passed": true,
+      "details": "Canonical multi-year firms = 720 (10,785 slots + 14 MCG slots = 10,799; isolated 1-row MCO in 2022)."
+    },
+    {
+      "check_id": 2,
+      "name": "Zero NaN/Inf in Normalized Feature Matrices",
+      "passed": true,
+      "details": "Total NaN/Inf entries across Train ((4048, 18)), Val ((1307, 18)), Test ((2083, 18)) = 0."
+    },
+    {
+      "check_id": 3,
+      "name": "Strict Point-in-Time Post-Listing Guard (Zero Pre-IPO Backfill Leakage)",
+      "passed": true,
+      "details": "Leaked pre-IPO rows in Train/Val/Test = 0; isolated pre-IPO transitions for bias audit = 1562."
+    },
+    {
+      "check_id": 4,
+      "name": "Purged Outcome-Year Split Boundaries (Zero Future Label Leakage)",
+      "passed": true,
+      "details": "Train outcome tau in [2009, 2017] (t<=2016); Val tau in [2018, 2019] (t<=2018); Test tau in [2020, 2022]."
+    },
+    {
+      "check_id": 5,
+      "name": "Train-Only Standardization & Winsorization Verification",
+      "passed": true,
+      "details": "Train max |mean|=7.88e-15, max |std-1|=2.01e-14; Test max |mean|=0.2714 (confirms Test distribution was NOT used to fit scaler)."
+    },
+    {
+      "check_id": 6,
+      "name": "2022 Regulatory Delisting & Bond Crisis Attrition Capture",
+      "passed": true,
+      "details": "Captured 19 right-censored/delisted 2022 defaults in Test set, including key crisis issuers: ['AMD', 'BII', 'FLC', 'GAB', 'HAI', 'VKC']."
+    },
+    {
+      "check_id": 7,
+      "name": "EINN Composite Loss Convergence & Analytical Jacobian Monotonicity Check",
+      "passed": true,
+      "details": "Train L_total decreased from 0.7798 -> 0.3841; Out-of-Time Test Jacobian R_mono = 0.000000, R_bound = 0.037093."
+    }
+  ],
+  "loss_diagnostics": {
+    "train_initial": {
+      "L_total": 0.7798213322811295,
+      "L_data": 0.382243785447234,
+      "R_mono": 0.0,
+      "R_bound": 0.22087641490771973
+    },
+    "train_converged": {
+      "L_total": 0.3841352267338606,
+      "L_data": 0.2956155870545063,
+      "R_mono": 0.0,
+      "R_bound": 0.049177577599641246
+    },
+    "test_out_of_time": {
+      "L_total": 0.5275936759278111,
+      "L_data": 0.4608271186209761,
+      "R_mono": 0.0,
+      "R_bound": 0.037092531837130564
+    }
+  }
+}

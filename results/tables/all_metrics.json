@@ -1,0 +1,168 @@
+{
+  "y_fwd": {
+    "Altman_Z_Double_Prime": {
+      "AUC_ROC": 0.6648,
+      "PR_AUC": 0.2487,
+      "F1": 0.2901,
+      "Brier": 0.2954,
+      "VR_mono_pct": 0.0,
+      "VR_bound_pct": 0.0,
+      "ECS_pct": 100.0
+    },
+    "Ohlson_O_Score": {
+      "AUC_ROC": 0.6453,
+      "PR_AUC": 0.2085,
+      "F1": 0.2602,
+      "Brier": 0.155,
+      "VR_mono_pct": 0.0,
+      "VR_bound_pct": 68.75,
+      "ECS_pct": 79.38
+    },
+    "LogisticRegression": {
+      "AUC_ROC": 0.7732,
+      "PR_AUC": 0.3044,
+      "F1": 0.4139,
+      "Brier": 0.0854,
+      "VR_mono_pct": 100.0,
+      "VR_bound_pct": 81.25,
+      "ECS_pct": 5.63
+    },
+    "RBF_SVM": {
+      "AUC_ROC": 0.7504,
+      "PR_AUC": 0.2886,
+      "F1": 0.3574,
+      "Brier": 0.0877,
+      "VR_mono_pct": 95.3,
+      "VR_bound_pct": 100.0,
+      "ECS_pct": 3.29
+    },
+    "RandomForest": {
+      "AUC_ROC": 0.8062,
+      "PR_AUC": 0.3433,
+      "F1": 0.4199,
+      "Brier": 0.0822,
+      "VR_mono_pct": 0.77,
+      "VR_bound_pct": 100.0,
+      "ECS_pct": 69.46
+    },
+    "Unconstrained_GBDT": {
+      "AUC_ROC": 0.7991,
+      "PR_AUC": 0.3493,
+      "F1": 0.4201,
+      "Brier": 0.0819,
+      "VR_mono_pct": 0.05,
+      "VR_bound_pct": 100.0,
+      "ECS_pct": 69.97
+    },
+    "Unconstrained_MLP": {
+      "AUC_ROC": 0.7764,
+      "PR_AUC": 0.3021,
+      "F1": 0.3919,
+      "Brier": 0.0879,
+      "VR_mono_pct": 71.96,
+      "VR_bound_pct": 68.75,
+      "ECS_pct": 29.0
+    },
+    "Mono_GBDT": {
+      "AUC_ROC": 0.8021,
+      "PR_AUC": 0.3793,
+      "F1": 0.4187,
+      "Brier": 0.0798,
+      "VR_mono_pct": 0.05,
+      "VR_bound_pct": 0.0,
+      "ECS_pct": 99.97
+    },
+    "Proposed_EINN": {
+      "AUC_ROC": 0.787,
+      "PR_AUC": 0.3517,
+      "F1": 0.3943,
+      "Brier": 0.0848,
+      "VR_mono_pct": 0.0,
+      "VR_bound_pct": 0.0,
+      "ECS_pct": 100.0
+    }
+  },
+  "y_ovl": {
+    "Altman_Z_Double_Prime": {
+      "AUC_ROC": 0.644,
+      "PR_AUC": 0.2713,
+      "F1": 0.3298,
+      "Brier": 0.2917,
+      "VR_mono_pct": 0.0,
+      "VR_bound_pct": 0.0,
+      "ECS_pct": 100.0
+    },
+    "Ohlson_O_Score": {
+      "AUC_ROC": 0.6528,
+      "PR_AUC": 0.2713,
+      "F1": 0.3212,
+      "Brier": 0.1674,
+      "VR_mono_pct": 0.0,
+      "VR_bound_pct": 68.75,
+      "ECS_pct": 79.38
+    },
+    "LogisticRegression": {
+      "AUC_ROC": 0.9548,
+      "PR_AUC": 0.7351,
+      "F1": 0.758,
+      "Brier": 0.0664,
+      "VR_mono_pct": 94.1,
+      "VR_bound_pct": 37.5,
+      "ECS_pct": 22.88
+    },
+    "RBF_SVM": {
+      "AUC_ROC": 0.8864,
+      "PR_AUC": 0.6282,
+      "F1": 0.5808,
+      "Brier": 0.0969,
+      "VR_mono_pct": 96.54,
+      "VR_bound_pct": 100.0,
+      "ECS_pct": 2.42
+    },
+    "RandomForest": {
+      "AUC_ROC": 0.962,
+      "PR_AUC": 0.7746,
+      "F1": 0.8011,
+      "Brier": 0.06,
+      "VR_mono_pct": 2.21,
+      "VR_bound_pct": 93.75,
+      "ECS_pct": 70.33
+    },
+    "Unconstrained_GBDT": {
+      "AUC_ROC": 0.964,
+      "PR_AUC": 0.782,
+      "F1": 0.806,
+      "Brier": 0.0496,
+      "VR_mono_pct": 0.0,
+      "VR_bound_pct": 100.0,
+      "ECS_pct": 70.0
+    },
+    "Unconstrained_MLP": {
+      "AUC_ROC": 0.9557,
+      "PR_AUC": 0.7526,
+      "F1": 0.7425,
+      "Brier": 0.0606,
+      "VR_mono_pct": 39.94,
+      "VR_bound_pct": 12.5,
+      "ECS_pct": 68.29
+    },
+    "Mono_GBDT": {
+      "AUC_ROC": 0.9648,
+      "PR_AUC": 0.7932,
+      "F1": 0.8076,
+      "Brier": 0.049,
+      "VR_mono_pct": 0.0,
+      "VR_bound_pct": 0.0,
+      "ECS_pct": 100.0
+    },
+    "Proposed_EINN": {
+      "AUC_ROC": 0.9592,
+      "PR_AUC": 0.7658,
+      "F1": 0.762,
+      "Brier": 0.059,
+      "VR_mono_pct": 0.0,
+      "VR_bound_pct": 0.0,
+      "ECS_pct": 100.0
+    }
+  }
+}

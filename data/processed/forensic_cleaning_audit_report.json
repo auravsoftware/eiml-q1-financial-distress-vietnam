@@ -1,0 +1,284 @@
+{
+  "raw_shape": [
+    10800,
+    31
+  ],
+  "raw_headers": [
+    "Ticker",
+    "Year",
+    "Stockexchange",
+    "ICB2",
+    "Listedyear",
+    "Asset",
+    "Sales",
+    "Netsales",
+    "Debt",
+    "Shortdebt",
+    "Equity",
+    "Fixedassets",
+    "Cashonhand",
+    "Shortermassets",
+    "Longassets",
+    "Workingcapital",
+    "NetProfit",
+    "receivablesturnover",
+    "inventorturnover",
+    "Currentpayoutratio",
+    "Quickpayoutratio",
+    "Cashpayoutratio",
+    "ROE",
+    "ROA",
+    "ROS",
+    "CostofGood",
+    "CostofGood",
+    "financialexp",
+    "interestexp",
+    "sellingexpen",
+    "managementexpen"
+  ],
+  "anomalies_detected_and_fixed": {
+    "1_duplicate_costofgood": {
+      "col_25_name": "CostofGood",
+      "col_26_name": "CostofGood",
+      "discrepancy_rows": 0,
+      "action": "Dropped redundant column index 26; retained column index 25."
+    },
+    "2_ticker_panel_splice": {
+      "raw_unique_tickers": 721,
+      "tickers_with_15_years": 719,
+      "irregular_tickers": {
+        "MCG": {
+          "count": 14,
+          "years": [
+            2008,
+            2009,
+            2010,
+            2011,
+            2012,
+            2013,
+            2014,
+            2015,
+            2016,
+            2017,
+            2018,
+            2019,
+            2020,
+            2021
+          ]
+        },
+        "MCO": {
+          "count": 1,
+          "years": [
+            2022
+          ]
+        }
+      },
+      "action": "Isolated single-year splice 'MCO' (Row 5296, Year 2022, HNX, Listedyear=None) from transition modeling; retained 720 canonical multi-year firm panels."
+    },
+    "3_static_metadata_and_2022_delisting": {
+      "missing_2022_listedyear_rows_fixed": 719,
+      "epoch_1900_listedyear_tickers_fixed": [
+        "ATP",
+        "BCH",
+        "CKM",
+        "CRV",
+        "DO3",
+        "GDA",
+        "GPC",
+        "NCG",
+        "TKD"
+      ],
+      "dropped_2022_exchange_tickers": [
+        "AMD",
+        "BII",
+        "CKM",
+        "DNM",
+        "DO3",
+        "FLC",
+        "GAB",
+        "GPC",
+        "HAI"
+      ],
+      "active_2021_missing_2022_filing_tickers": [
+        "AMD",
+        "ART",
+        "BII",
+        "DNM",
+        "EMC",
+        "FLC",
+        "GAB",
+        "GPC",
+        "HAI",
+        "HHG",
+        "HOT",
+        "HU3",
+        "KVC",
+        "L35",
+        "LCS",
+        "LM7",
+        "LUT",
+        "SD4",
+        "SIC",
+        "SJ1",
+        "THI",
+        "UDC",
+        "VKC",
+        "VTL"
+      ],
+      "action": "Forward-propagated Listedyear to 2022; replaced Listedyear=1900 with first audited filing year; preserved 2022 exchange-loss and non-filing flags as Condition 3 regulatory distress indicators."
+    },
+    "4_expense_sign_and_interest_imputation": {
+      "positive_sign_expense_anomalies": {
+        "financialexp": {
+          "count": 29,
+          "examples": [
+            {
+              "ticker": "CAG",
+              "year": 2022,
+              "value": 104521535.0
+            },
+            {
+              "ticker": "CTD",
+              "year": 2010,
+              "value": 705072285.0
+            },
+            {
+              "ticker": "CTD",
+              "year": 2013,
+              "value": 956344811.0
+            },
+            {
+              "ticker": "D2D",
+              "year": 2015,
+              "value": 37032118.0
+            },
+            {
+              "ticker": "D2D",
+              "year": 2016,
+              "value": 852078661.0
+            }
+          ]
+        },
+        "managementexpen": {
+          "count": 3,
+          "examples": [
+            {
+              "ticker": "DHM",
+              "year": 2022,
+              "value": 323944095.0
+            },
+            {
+              "ticker": "HAG",
+              "year": 2022,
+              "value": 1349894514000.0
+            },
+            {
+              "ticker": "PGT",
+              "year": 2020,
+              "value": 335003761.0
+            }
+          ]
+        },
+        "CostofGood": {
+          "count": 1,
+          "examples": [
+            {
+              "ticker": "ITA",
+              "year": 2022,
+              "value": 1375298633545.0
+            }
+          ]
+        },
+        "interestexp": {
+          "count": 2,
+          "examples": [
+            {
+              "ticker": "MSH",
+              "year": 2022,
+              "value": 33904594116.0
+            },
+            {
+              "ticker": "NFC",
+              "year": 2018,
+              "value": 1458633359.0
+            }
+          ]
+        },
+        "sellingexpen": {
+          "count": 5,
+          "examples": [
+            {
+              "ticker": "NDN",
+              "year": 2017,
+              "value": 309153317.0
+            },
+            {
+              "ticker": "PC1",
+              "year": 2022,
+              "value": 8391008009.0
+            },
+            {
+              "ticker": "PEN",
+              "year": 2017,
+              "value": 31042130.0
+            },
+            {
+              "ticker": "TV2",
+              "year": 2022,
+              "value": 19952772095.0
+            },
+            {
+              "ticker": "VMC",
+              "year": 2022,
+              "value": 9141859872.0
+            }
+          ]
+        }
+      },
+      "train_only_interest_to_finexp_median_kappa": 0.852993,
+      "action": "Normalized expense outflows via absolute magnitude |.|; imputed missing interestexp using kappa_train * |financialexp| fitted strictly on post-listing training years (t <= 2016)."
+    },
+    "5_panel_hygiene_counts": {
+      "canonical_firms": 720,
+      "total_firm_year_slots": 10799,
+      "post_listing_valid_firm_years": 8137,
+      "pre_listing_backfill_firm_years_isolated": 1570,
+      "missing_financial_statement_slots": 1092,
+      "imputed_interestexp_rows": 1376,
+      "negative_revenue_anomalies_fixed": [
+        {
+          "ticker": "ITA",
+          "year": 2022,
+          "sales": -2920499881206.0,
+          "netsales": -1545201247661.0
+        },
+        {
+          "ticker": "PTC",
+          "year": 2020,
+          "sales": 172535554.0,
+          "netsales": -511087212.0
+        },
+        {
+          "ticker": "PTC",
+          "year": 2021,
+          "sales": 0.0,
+          "netsales": -599893492.0
+        },
+        {
+          "ticker": "SJS",
+          "year": 2017,
+          "sales": 45997833084.0,
+          "netsales": -20165696759.0
+        }
+      ],
+      "shortdebt_gt_debt_anomalies_fixed": [
+        {
+          "ticker": "KSD",
+          "year": 2022,
+          "debt": 4021536011.0,
+          "shortdebt": 11719520611.0
+        }
+      ]
+    }
+  }
+}

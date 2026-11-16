@@ -1,0 +1,184 @@
+{
+  "splits_overview": {
+    "train": {
+      "n_samples": 4048,
+      "feature_years_t": [
+        2008,
+        2016
+      ],
+      "outcome_years_tau": [
+        2009,
+        2017
+      ],
+      "strict_forward_distress_count": 272,
+      "strict_forward_distress_rate_pct": 6.72,
+      "persistent_distress_count": 401,
+      "persistent_distress_rate_pct": 9.91,
+      "altman_boundary_severe_cases": 18
+    },
+    "val": {
+      "n_samples": 1307,
+      "feature_years_t": [
+        2017,
+        2018
+      ],
+      "outcome_years_tau": [
+        2018,
+        2019
+      ],
+      "strict_forward_distress_count": 85,
+      "strict_forward_distress_rate_pct": 6.5,
+      "persistent_distress_count": 138,
+      "persistent_distress_rate_pct": 10.56,
+      "altman_boundary_severe_cases": 6
+    },
+    "test": {
+      "n_samples": 2083,
+      "feature_years_t": [
+        2019,
+        2021
+      ],
+      "outcome_years_tau": [
+        2020,
+        2022
+      ],
+      "strict_forward_distress_count": 218,
+      "strict_forward_distress_rate_pct": 10.47,
+      "persistent_distress_count": 311,
+      "persistent_distress_rate_pct": 14.93,
+      "altman_boundary_severe_cases": 16
+    }
+  },
+  "pre_ipo_isolated_transitions": {
+    "n_samples": 1562,
+    "persistent_distress_rate_pct": 7.23
+  },
+  "scaler_fitted_on_train_only": {
+    "curr_ratio": {
+      "monotonic_constraint": 0,
+      "p01_train": 0.3957,
+      "p99_train": 15.0,
+      "mean_train": 2.3193,
+      "std_train": 2.3092
+    },
+    "quick_ratio": {
+      "monotonic_constraint": 0,
+      "p01_train": 0.1311,
+      "p99_train": 14.5645,
+      "mean_train": 1.576,
+      "std_train": 2.0888
+    },
+    "cash_to_asset": {
+      "monotonic_constraint": 0,
+      "p01_train": 0.0013,
+      "p99_train": 0.5736,
+      "mean_train": 0.1117,
+      "std_train": 0.1198
+    },
+    "wc_to_asset": {
+      "monotonic_constraint": -1,
+      "p01_train": -0.2332,
+      "p99_train": 0.8162,
+      "mean_train": 0.2385,
+      "std_train": 0.2219
+    },
+    "debt_to_asset": {
+      "monotonic_constraint": 1,
+      "p01_train": 0.0385,
+      "p99_train": 0.9037,
+      "mean_train": 0.4882,
+      "std_train": 0.2182
+    },
+    "shortdebt_to_debt": {
+      "monotonic_constraint": 1,
+      "p01_train": 0.135,
+      "p99_train": 1.0,
+      "mean_train": 0.8151,
+      "std_train": 0.2326
+    },
+    "icr_op": {
+      "monotonic_constraint": -1,
+      "p01_train": -15.0,
+      "p99_train": 25.0,
+      "mean_train": 8.555,
+      "std_train": 9.7304
+    },
+    "cash_to_debt": {
+      "monotonic_constraint": 0,
+      "p01_train": 0.0022,
+      "p99_train": 5.0,
+      "mean_train": 0.41,
+      "std_train": 0.7551
+    },
+    "roa": {
+      "monotonic_constraint": -1,
+      "p01_train": -0.159,
+      "p99_train": 0.3225,
+      "mean_train": 0.0659,
+      "std_train": 0.0715
+    },
+    "roe": {
+      "monotonic_constraint": 0,
+      "p01_train": -0.3028,
+      "p99_train": 0.5743,
+      "mean_train": 0.1378,
+      "std_train": 0.132
+    },
+    "ebit_to_asset": {
+      "monotonic_constraint": -1,
+      "p01_train": -0.1464,
+      "p99_train": 0.3454,
+      "mean_train": 0.0797,
+      "std_train": 0.0798
+    },
+    "op_margin": {
+      "monotonic_constraint": 0,
+      "p01_train": -2.0,
+      "p99_train": 0.5831,
+      "mean_train": 0.0496,
+      "std_train": 0.3461
+    },
+    "asset_turnover": {
+      "monotonic_constraint": 0,
+      "p01_train": 0.0,
+      "p99_train": 5.0,
+      "mean_train": 1.1537,
+      "std_train": 0.9905
+    },
+    "rec_turnover": {
+      "monotonic_constraint": 0,
+      "p01_train": 0.0145,
+      "p99_train": 50.0,
+      "mean_train": 12.413,
+      "std_train": 13.9062
+    },
+    "inv_turnover": {
+      "monotonic_constraint": 0,
+      "p01_train": 0.0,
+      "p99_train": 50.0,
+      "mean_train": 10.2736,
+      "std_train": 14.0761
+    },
+    "opex_to_sales": {
+      "monotonic_constraint": 0,
+      "p01_train": 0.0112,
+      "p99_train": 2.0,
+      "mean_train": 0.153,
+      "std_train": 0.2905
+    },
+    "delta_debt_to_asset": {
+      "monotonic_constraint": 0,
+      "p01_train": -0.2594,
+      "p99_train": 0.2424,
+      "mean_train": -0.0025,
+      "std_train": 0.0803
+    },
+    "delta_icr_op": {
+      "monotonic_constraint": 0,
+      "p01_train": -10.0,
+      "p99_train": 10.0,
+      "mean_train": 0.0316,
+      "std_train": 4.7517
+    }
+  }
+}
