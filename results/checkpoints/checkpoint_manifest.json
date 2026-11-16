@@ -1,0 +1,18 @@
+{
+  "description": "Pre-trained model checkpoints for EIML Q1 Financial Distress Prediction (Vietnam 2008-2022)",
+  "bundled_pickles": [
+    "results/models/eiml_models.pkl",
+    "results/models/baselines.pkl"
+  ],
+  "standalone_checkpoints": [
+    "results/checkpoints/scaler_and_axioms_checkpoint.json",
+    "results/checkpoints/proposed_einn_y_fwd_checkpoint.npz",
+    "results/checkpoints/proposed_einn_y_fwd_checkpoint.pkl",
+    "results/checkpoints/proposed_einn_y_ovl_checkpoint.npz",
+    "results/checkpoints/proposed_einn_y_ovl_checkpoint.pkl",
+    "results/checkpoints/mono_gbdt_y_fwd_checkpoint.pkl",
+    "results/checkpoints/mono_gbdt_y_ovl_checkpoint.pkl",
+    "results/checkpoints/unconstrained_mlp_y_fwd_checkpoint.npz",
+    "results/checkpoints/unconstrained_mlp_y_ovl_checkpoint.npz"
+  ]
+}

@@ -1,0 +1,191 @@
+{
+  "plotting_plan": [
+    {
+      "figure_id": "fig_eiml_architecture_and_monotonic_cone",
+      "title": "Overview of the Economics-Informed Machine Learning (EIML) Architecture",
+      "plot_type": "diagram",
+      "data_source": "idea_dense.md",
+      "objective": "Conceptual architectural diagram illustrating the 4 Corporate Finance Pillars (Liquidity, Solvency, Profitability, Efficiency), the Point-in-Time Forensic Filter, the Dual-Stream EINN with Differential Monotonicity Regularization (R_mono), Altman Double-Deficit Boundary Penalty (R_bound), and Positive-Cone Weight Projection.",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "figure_id": "fig_cohort_distress_regimes_2008_2022",
+      "title": "Corporate Distress Trajectory Across Four Macroeconomic Crisis Regimes (2008-2022)",
+      "plot_type": "plot",
+      "data_source": "experimental_log.md",
+      "objective": "Time-series dual-line and shaded-regime bar chart showing annual distress rates (%) from 2008->2009 to 2021->2022, highlighting the 2011-2012 Banking NPL Crisis peak (15.21%) and the 2020-2022 COVID-19 & Corporate Bond Crisis peak (15.77%), alongside Purged Train/Val/Test split boundaries.",
+      "aspect_ratio": "16:9"
+    },
+    {
+      "figure_id": "fig_pareto_frontier_accuracy_vs_economic_consistency",
+      "title": "Accuracy vs. Economic Consistency Score (ECS) Pareto Frontier on Out-of-Time Crisis Test Set",
+      "plot_type": "plot",
+      "data_source": "experimental_log.md",
+      "objective": "2D scatter and Pareto frontier plot comparing Classical Models (Altman Z'', Ohlson O, Logistic Regression), Black-Box ML (SVM, Random Forest, Unconstrained GBDT, Deep MLP), and Proposed EIML (Mono-GBDT, EINN) across PR-AUC (x-axis) and Economic Consistency Score ECS % (y-axis).",
+      "aspect_ratio": "4:3"
+    },
+    {
+      "figure_id": "fig_partial_dependence_monotonicity_verification",
+      "title": "Ceteris-Paribus Response Curves: Black-Box Hallucinations vs. EINN Monotonicity",
+      "plot_type": "plot",
+      "data_source": "both",
+      "objective": "Side-by-side sensitivity response curves showing predicted distress probability P(Distress) as a function of ShortDebt/Debt and Operating ICR, contrasting the non-monotonic oscillations of Unconstrained MLP against the strictly monotonic trajectories of EINN.",
+      "aspect_ratio": "16:9"
+    }
+  ],
+  "intro_related_work_plan": {
+    "introduction_strategy": {
+      "hook_hypothesis": "Corporate financial distress and shadow credit risk in emerging markets have escalated sharply during recent macroeconomic and corporate bond liquidity crises, requiring early-warning models that are both highly accurate out-of-time and strictly compliant with economic solvency laws.",
+      "problem_gap_hypothesis": "Classical parametric models (Altman Z''-Score, Ohlson O-Score) obey economic signs but fail to capture nonlinear interactions, whereas black-box ML models (XGBoost, Deep MLP) exhibit severe monotonicity violations (42.18%-88.10%) and degrade under out-of-distribution crisis shifts, compounded by pervasive look-ahead and survivorship biases in emerging-market panel studies.",
+      "search_directions": [
+        "Foundational papers on corporate bankruptcy and financial distress prediction (Altman 1968, Ohlson 1980, Shumway 2001, Campbell Hilscher Szilagyi 2008)",
+        "Machine learning benchmarks for corporate bankruptcy and credit risk prediction (Barboza Kimura Altman 2017 Expert Systems with Applications)",
+        "Monotonicity constraints, physics-informed neural networks, and shape-constrained machine learning in finance and credit scoring"
+      ]
+    },
+    "related_work_strategy": {
+      "overview": "Synthesize three methodological clusters to establish the necessity of combining forensic point-in-time panel hygiene with monotonic and boundary-constrained representation learning.",
+      "subsections": [
+        {
+          "subsection_title": "2.1 Classical Structural and Accounting-Based Distress Models",
+          "methodology_cluster": "Discriminant Analysis, Logit, and Discrete-Time Hazard Models",
+          "sota_investigation_mission": "Review canonical accounting and hazard models for emerging and developed markets.",
+          "limitation_hypothesis": "Linear additive functional forms cannot capture conditional threshold effects between short-term debt rollovers and operating interest coverage.",
+          "limitation_search_queries": [
+            "Altman Z-score emerging markets corporate bond distress limitations",
+            "Nonlinear interaction effects leverage interest coverage bankruptcy prediction"
+          ],
+          "bridge_to_our_method": "EIML retains the four classical accounting pillars and Altman's double-deficit boundary while unlocking nonlinear representation learning."
+        },
+        {
+          "subsection_title": "2.2 Ensemble and Deep Learning Models in Credit Risk",
+          "methodology_cluster": "Gradient Boosted Trees and Deep Neural Networks",
+          "sota_investigation_mission": "Analyze modern ML credit scoring models following Barboza et al. (2017).",
+          "limitation_hypothesis": "Unconstrained empirical risk minimization overfits collinear noise in emerging market panels, generating economically inconsistent negative gradients on leverage.",
+          "limitation_search_queries": [
+            "Machine learning bankruptcy prediction interpretability monotonicity violation credit scoring",
+            "Out-of-distribution regime shift financial distress prediction machine learning"
+          ],
+          "bridge_to_our_method": "Our differential monotonicity penalty and positive-cone weight projection eliminate economic hallucinations (0% violation rate) and improve OOD generalization."
+        },
+        {
+          "subsection_title": "2.3 Panel Data Hygiene, Look-Ahead Bias, and Censoring in Finance",
+          "methodology_cluster": "Financial Econometrics and Point-in-Time Backtesting",
+          "sota_investigation_mission": "Examine survivorship bias, delisting attrition, and purged cross-validation in financial machine learning.",
+          "limitation_hypothesis": "Ignoring pre-IPO backfilling, split boundary overlap, and regulatory delisting censoring severely distorts out-of-sample evaluation.",
+          "limitation_search_queries": [
+            "Shumway delisting bias bankruptcy prediction hazard model",
+            "Purged cross validation look-ahead bias financial machine learning Lopez de Prado"
+          ],
+          "bridge_to_our_method": "We formalize a 6-point zero-look-ahead protocol and quantify the exact AUC distortion of each bias source."
+        }
+      ]
+    }
+  },
+  "section_plan": [
+    {
+      "section_title": "Abstract",
+      "subsections": [
+        {
+          "subsection_title": "Abstract Content",
+          "content_bullets": [
+            "State the trade-off between classical solvency theory and black-box ML hallucinations (42.18%-88.10% monotonicity violations).",
+            "Introduce the EIML framework (Mono-GBDT and EINN) with partial monotonicity and Altman boundary constraints.",
+            "Summarize the 15-year Vietnamese corporate panel (2008-2022, 720 firms), forensic data cleaning, zero-look-ahead purged split, and SOTA out-of-time results (0.7894 and 0.9597 AUC-ROC, 100% ECS)."
+          ],
+          "citation_hints": []
+        }
+      ]
+    },
+    {
+      "section_title": "3. Methodology: Economics-Informed Machine Learning (EIML)",
+      "subsections": [
+        {
+          "subsection_title": "3.1 Four-Pillar Feature Space and Operating EBIT Formulation",
+          "content_bullets": [
+            "Formalize the 18 scale-invariant financial features across Liquidity, Solvency, Profitability, Efficiency, and Dynamic Lags.",
+            "Prove Proposition 1 showing why naive post-tax EBIT collapses ICR < 1 into NetProfit < 0, and derive Operating EBIT (EBIT_op)."
+          ],
+          "citation_hints": [
+            "Altman (Financial Ratios, Discriminant Analysis and the Prediction of Corporate Bankruptcy)",
+            "Ohlson (Financial Ratios and the Probabilistic Prediction of Bankruptcy)"
+          ]
+        },
+        {
+          "subsection_title": "3.2 Economic Axioms and Composite Optimization Objective",
+          "content_bullets": [
+            "Formalize Axiom 1 (Partial Monotonicity on Leverage and ICR_op) and Axiom 2 (Altman Double-Deficit Insolvency Boundary).",
+            "Define the composite loss function L_total combining Focal/Weighted BCE, Jacobian penalty R_mono, boundary hinge penalty R_bound, and Hard Positive-Cone Weight Projection."
+          ],
+          "citation_hints": [
+            "Raissi et al. (Physics-informed neural networks: A deep learning framework for solving forward and inverse problems involving nonlinear partial differential equations)",
+            "Ke et al. (LightGBM: A Highly Efficient Gradient Boosting Decision Tree)"
+          ]
+        }
+      ]
+    },
+    {
+      "section_title": "4. Forensic Data Pipeline and Zero-Look-Ahead Experimental Design",
+      "subsections": [
+        {
+          "subsection_title": "4.1 Forensic Audit and Remediation of Accounting Anomalies",
+          "content_bullets": [
+            "Detail the 8 structural defects found in data-financial-0601.xlsx (duplicate CostofGood, MCG/MCO row 5296 splice, expense sign convention, missing interestexp imputation, Listedyear=1900, and 2022 delisting attrition)."
+          ],
+          "citation_hints": [
+            "Shumway (Forecasting Bankruptcy More Accurately: A Simple Hazard Model)"
+          ]
+        },
+        {
+          "subsection_title": "4.2 Dual Target Regimes and Purged Point-in-Time Split",
+          "content_bullets": [
+            "Contrast Regime A (Strict 1-Year-Ahead Forward Distress Y_fwd) and Regime B (Multi-Period Persistent Distress Y_ovl).",
+            "Define the Outcome-Year Purged Time-Series Split (Train tau in 2009-2017, Val tau in 2018-2019, Test tau in 2020-2022) and strict train-only Winsorization/Standardization."
+          ],
+          "citation_hints": [
+            "Campbell et al. (In Search of Distress Risk)"
+          ]
+        }
+      ]
+    },
+    {
+      "section_title": "5. Empirical Results and Ablation Studies",
+      "subsections": [
+        {
+          "subsection_title": "5.1 Out-of-Time Crisis Benchmark Performance",
+          "content_bullets": [
+            "Present Table 1 (Regime A: Strict Forward Distress) and Table 2 (Regime B: Persistent Distress) across all 9 baseline and EIML models.",
+            "Analyze why unconstrained Deep MLP degrades under the 2020-2022 crisis regime shift while EINN achieves 0.7894 / 0.9597 AUC-ROC and 100.00% ECS."
+          ],
+          "citation_hints": [
+            "Barboza et al. (Machine learning models and bankruptcy prediction)",
+            "Chen and Guestrin (XGBoost: A Scalable Tree Boosting System)"
+          ]
+        },
+        {
+          "subsection_title": "5.2 Look-Ahead Bias Quantification and Component Ablation",
+          "content_bullets": [
+            "Present Table 3 quantifying the exact AUC distortion of 6 look-ahead and survivorship biases (+0.0521 from Random CV, +0.1888 from contemporaneous leakage, -0.0104 from 2022 delisting attrition).",
+            "Present Table 4 ablating lambda_1 (R_mono), lambda_2 (R_bound), and Hard Cone Projection."
+          ],
+          "citation_hints": [
+            "Lundberg and Lee (A Unified Approach to Interpreting Model Predictions)"
+          ]
+        }
+      ]
+    },
+    {
+      "section_title": "6. Conclusion and Policy Implications",
+      "subsections": [
+        {
+          "subsection_title": "6.1 Summary of Findings and Regulatory Takeaways",
+          "content_bullets": [
+            "Highlight case studies from the 2022 Vietnamese bond crisis (FLC, HAI, BII, VKC) where Operating ICR detected shadow distress 1 year ahead despite positive reported net profit.",
+            "Provide Basel III / IRB model validation recommendations using the Economic Consistency Score (ECS)."
+          ],
+          "citation_hints": []
+        }
+      ]
+    }
+  ]
+}
