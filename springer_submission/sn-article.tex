@@ -1,7 +1,8 @@
 % Springer Nature Journal Submission Manuscript
 % Template: sn-jnl.cls (Springer Nature, 2024/2026)
 % Document Class: pdflatex, sn-mathphys-num
-\documentclass[pdflatex,sn-mathphys-num]{sn-jnl}
+\documentclass[pdflatex,sn-mathphys-num,twocolumn]{sn-jnl}
+\makeatletter\def\Gm@warning#1{}\makeatother
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 
@@ -12,6 +13,9 @@
 \usepackage{mathrsfs}
 \usepackage[title]{appendix}
 \usepackage{xcolor}
+\usepackage{float}
+\usepackage{geometry}
+\geometry{bottom=2cm, left=1.5cm, right=1.5cm}
 \definecolor{crimson}{RGB}{180, 20, 20}
 \usepackage{textcomp}
 \usepackage{manyfoot}
@@ -109,7 +113,7 @@ In financial risk management, regulatory frameworks increasingly mandate that pr
 \subsection{Look-Ahead Bias, Panel Hygiene, and Vietnamese Corporate Distress Studies}
 A growing body of literature examines corporate financial distress specifically within Vietnam's listed equity and bond markets. \citet{pham2018financial} evaluated accounting, distance-to-default, and macroeconomic factors for Vietnamese listed firms (2003--2016), finding that accounting ratios paired with macro indicators provide strong discriminatory power. \citet{vo2019corporate} and \citet{tran2023examining} investigated industry-level distress risk and accounting-based logit models across 500 Vietnamese listed firms (2012--2021), confirming the high vulnerability of the Construction and Real Estate sector and validating interest coverage ($\text{ICR}$) as a primary distress proxy. \citet{vu2023lasso} applied LASSO variable selection to 492 Vietnamese listed firms during the COVID-19 pandemic, identifying working capital, retained earnings, EBIT, and net income to total assets as core predictors. In the machine learning stream, \citet{tran2022explainable} compared Random Forest, XGBoost, SVM, ANN, and Logistic Regression with SHAP explanations on 3,277 Vietnamese firm-year observations (2010--2021).
 
-\begin{table}[t!]
+\begin{table*}[t]
 \centering
 \caption{Methodological positioning of the proposed EIML framework relative to seminal Q1--Q4 literature across six structural and econometric dimensions.}
 \label{tab:lit_positioning}
@@ -134,7 +138,7 @@ A growing body of literature examines corporate financial distress specifically 
 \bottomrule
 \end{tabular}
 \vspace{-0.4em}
-\end{table}
+\end{table*}
 
 Despite their empirical contributions, prior Vietnamese ML distress studies exhibit critical methodological gaps (Table~\ref{tab:lit_positioning}). For instance, \citet{tran2022explainable} applied SMOTE oversampling and a random $70/30$ train-validation split across the 2010--2021 panel rather than an out-of-time forecast split, allowing persistent multi-year firm distress states and future macro conditions to leak across training and test sets \citep{bailey2014pseudo,lopez2018advances}. Furthermore, prior studies winsorized financial ratios across the full sample \citep[e.g.,][]{tran2023examining}, did not isolate backfilled pre-IPO accounting rows ($\text{Year} < \text{Listedyear}$), ignored survivorship bias from post-distress regulatory delistings, and relied on unconstrained ML classifiers whose marginal predictions frequently violate financial comparative statics. Our study directly resolves each of these limitations.
 
@@ -147,7 +151,7 @@ Despite their empirical contributions, prior Vietnamese ML distress studies exhi
 \subsection{Dataset Provenance and Seven-Step Forensic Audit}
 Our empirical investigation utilizes a comprehensive raw panel dataset (\texttt{data-financial-0601.xlsx}) comprising $11,455$ firm-year records and $35$ columns across Vietnamese non-financial corporations listed on HOSE, HNX, and UPCOM over the 15-year period from 2008 to 2022. Rather than feeding raw spreadsheet extracts directly into machine learning estimators, we execute a rigorous 7-step forensic data hygiene protocol (summarized in Table~\ref{tab:forensic_audit}) that uncovers and rectifies seven structural anomalies:
 
-\begin{table}[t!]
+\begin{table*}[t]
 \centering
 \caption{Summary of the 7-step forensic data audit and panel hygiene pipeline executed on the raw Vietnamese corporate panel (2008--2022).}
 \label{tab:forensic_audit}
@@ -168,7 +172,7 @@ Our empirical investigation utilizes a comprehensive raw panel dataset (\texttt{
 \bottomrule
 \end{tabular}
 \vspace{-0.4em}
-\end{table}
+\end{table*}
 
 \begin{enumerate}
     \item \textbf{Schema Deduplication:} Columns 25 and 26 are both labeled \texttt{CostofGood}. A cell-by-cell audit across all $11,455$ rows confirms $0$ numerical differences; the duplicate column is removed.
@@ -202,12 +206,12 @@ To resolve a fundamental ambiguity in the corporate distress literature, we eval
     \item \textbf{Regime B: Persistent Multi-Period Distress ($Y_{i,t+1}^{\text{ovl}} = D_{i,t+1}$):} Captures any firm in distress in year $t+1$ regardless of whether it was already distressed in year $t$ ($1,303$ positive transitions out of $7,602$, or $17.14\%$). We include Regime B to benchmark directly against prior studies \citep[e.g.,][]{tran2022explainable,tran2023examining} and quantify how state persistence inflates ROC-AUC from $\sim 0.80$ to $\sim 0.96$.
 \end{itemize}
 
-\begin{figure}[t!]
+\begin{figure*}[t]
 \centering
 \includegraphics[width=0.92\textwidth]{fig2_crisis_trajectory.pdf}
 \caption{Annual incidence of persistent corporate distress ($Y_{i,\tau}^{\text{ovl}}$) and strict new forward distress transitions ($Y_{i,\tau}^{\text{fwd}}$) across Vietnamese stock exchanges (HOSE, HNX, UPCOM) from outcome fiscal year $\tau = 2009$ to $\tau = 2022$. Shaded regions denote the out-of-time validation ($\tau \in \{2019, 2020\}$) and test ($\tau \in \{2021, 2022\}$) regimes.}
 \label{fig:crisis_trajectory}
-\end{figure}
+\end{figure*}
 
 \subsection{Strict Out-of-Time Partitioning and Feature Engineering}
 To enforce Vietnamese statutory reporting timelines (where audited statements for fiscal year $t$ are published by April 1 of year $t+1$), features observed at $t_{\text{dec}} = \text{April 1, } t+1$ predict distress outcomes over $\tau = t+1$. As illustrated in Figure~\ref{fig:crisis_trajectory}, we partition the $7,602$ post-listing transition pairs strictly by outcome fiscal year $\tau$:
@@ -219,7 +223,7 @@ To enforce Vietnamese statutory reporting timelines (where audited statements fo
 
 Table~\ref{tab:features} details the $d=18$ financial ratios engineered at year $t$ across five economic dimensions (Liquidity, Leverage \& Coverage, Profitability, Efficiency, and Dynamic Trajectory) and their structural monotonicity axioms $s_j \in \{+1, -1, 0\}$.
 
-\begin{table}[t!]
+\begin{table*}[t]
 \centering
 \caption{Taxonomy of the $d=18$ engineered financial ratios, accounting formulas, and structural comparative-static monotonicity axioms $s_j \in \{+1, -1, 0\}$.}
 \label{tab:features}
@@ -260,7 +264,7 @@ Table~\ref{tab:features} details the $d=18$ financial ratios engineered at year 
 \bottomrule
 \end{tabular}
 \vspace{-0.4em}
-\end{table}
+\end{table*}
 
 % =========================================================================
 % SECTION 4: METHODOLOGY — ECONOMICALLY-INFORMED MACHINE LEARNING (EIML)
@@ -268,12 +272,12 @@ Table~\ref{tab:features} details the $d=18$ financial ratios engineered at year 
 \section{Methodology: Economically-Informed Machine Learning}
 \label{sec:methodology}
 
-\begin{figure}[t!]
+\begin{figure*}[t]
 \centering
 \includegraphics[width=0.98\textwidth]{fig1_architecture.pdf}
 \caption{End-to-end architecture of the proposed Economically-Informed Machine Learning (EIML) pipeline, illustrating (1) forensic panel hygiene, (2) zero-look-ahead temporal partitioning, (3) dual-track monotonic architecture (Monotonic GBDT and Proposed EINN), (4) composite theory-informed loss $\mathcal{L}_{\text{EINN}}$, and (5) out-of-time verification on the 2021--2022 bond crisis.}
 \label{fig:architecture}
-\end{figure}
+\end{figure*}
 
 Let $\mathbf{x}_{i,t} \in \mathbb{R}^d$ ($d=18$) denote the training-standardized feature vector of firm $i$ in year $t$, and let $\hat{p}_{i,t+1} = f_\theta(\mathbf{x}_{i,t}) \in (0,1)$ denote the predicted probability of distress in year $t+1$. As depicted in Figure~\ref{fig:architecture}, we partition the feature indices $\{1,\dots,d\}$ into three disjoint subsets based on structural corporate finance theory \citep{merton1974pricing,altman1968financial}:
 \begin{enumerate}
@@ -353,7 +357,7 @@ To evaluate whether a model is simultaneously accurate and economically rational
 \subsection{Out-of-Time Predictive Performance and Economic Consistency (2021--2022)}
 We evaluate 9 benchmark and proposed models on the out-of-time test cohort $\mathcal{D}_{\text{test}}$ ($\tau \in \{2021, 2022\}$, $N_{\text{test}}=2,083$): two classical accounting benchmarks (\textbf{Altman $Z''$-Score} \citep{altman1995emerging} and \textbf{Ohlson $O$-Score} \citep{ohlson1980financial}), five unconstrained ML baselines (\textbf{Logistic Regression}, \textbf{RBF-SVM}, \textbf{Random Forest}, \textbf{Unconstrained GBDT}, and \textbf{Unconstrained MLP}), and our two EIML models (\textbf{Mono-GBDT} and \textbf{Proposed EINN}). Table~\ref{tab:main_results} reports the comprehensive results across both Regime A ($Y_{i,t+1}^{\text{fwd}}$) and Regime B ($Y_{i,t+1}^{\text{ovl}}$), and Figure~\ref{fig:pareto_ecs} visualizes the Pareto frontier between out-of-time PR-AUC and Economic Consistency Score (ECS).
 
-\begin{table}[t!]
+\begin{table*}[t]
 \centering
 \caption{Out-of-time predictive performance and Economic Consistency Score (ECS) on the 2021--2022 test cohort ($N_{\text{test}}=2,083$) across Regime A (Strict Forward Distress $Y_{i,t+1}^{\text{fwd}}$) and Regime B (Persistent Multi-Period Distress $Y_{i,t+1}^{\text{ovl}}$). Bold values highlight best performance within each paradigm.}
 \label{tab:main_results}
@@ -392,14 +396,14 @@ We evaluate 9 benchmark and proposed models on the out-of-time test cohort $\mat
 \bottomrule
 \end{tabular}
 \vspace{-0.4em}
-\end{table}
+\end{table*}
 
-\begin{figure}[t!]
+\begin{figure*}[t]
 \centering
 \includegraphics[width=0.98\textwidth]{fig3_pareto_ecs.pdf}
 \caption{Pareto frontier between Out-of-Time PR-AUC and Economic Consistency Score (ECS, \%) on the 2021--2022 test cohort ($N_{\text{test}}=2,083$) for (a) Regime A: Strict Forward Distress ($Y_{i,t+1}^{\text{fwd}}$) and (b) Regime B: Persistent Multi-Period Distress ($Y_{i,t+1}^{\text{ovl}}$). Only Mono-GBDT and Proposed EINN occupy the Pareto-optimal zone (high PR-AUC with $\text{ECS} \approx 100\%$).}
 \label{fig:pareto_ecs}
-\end{figure}
+\end{figure*}
 
 Four key empirical findings emerge from Table~\ref{tab:main_results} and Figure~\ref{fig:pareto_ecs}:
 \begin{enumerate}
@@ -412,7 +416,7 @@ Four key empirical findings emerge from Table~\ref{tab:main_results} and Figure~
 \subsection{Ablation Study on Architectural Monotonicity and Boundary Losses}
 To isolate the contribution of each structural component in Equation~(\ref{eq:total_loss}), Table~\ref{tab:ablation} reports a step-by-step ablation from the unconstrained neural baseline to the full Proposed EINN on Regime A ($Y_{i,t+1}^{\text{fwd}}$).
 
-\begin{table}[t!]
+\begin{table*}[t]
 \centering
 \caption{Ablation study of structural components in Proposed EINN on the out-of-time test cohort ($Y_{i,t+1}^{\text{fwd}}$, $N_{\text{test}}=2,083$).}
 \label{tab:ablation}
@@ -430,21 +434,21 @@ To isolate the contribution of each structural component in Equation~(\ref{eq:to
 \bottomrule
 \end{tabular}
 \vspace{-0.4em}
-\end{table}
+\end{table*}
 
 As shown in Table~\ref{tab:ablation}, adding a soft gradient penalty alone reduces $\text{VR}_{\text{mono}}$ from $71.96\%$ to $8.40\%$ but cannot guarantee zero violations out-of-sample. Enforcing hard softplus weight reparameterization (Row 3) eliminates all comparative-static sign violations ($\text{VR}_{\text{mono}} = 0.00\%$) and boosts PR-AUC to $0.3462$. Finally, incorporating the Merton/Altman boundary loss $\mathcal{L}_{\text{bound}}$ (Row 4) eliminates all asymptotic tail violations ($\text{VR}_{\text{bound}} = 0.00\%$) and further improves PR-AUC to $0.3517$ by anchoring tail probability calibration.
 
 \subsection{Axiomatic Explainability (XAI) and Marginal Sensitivity Audit}
 We apply Integrated Gradients \citep{sundararajan2017axiomatic} across all $N_{\text{test}}=2,083$ out-of-time test observations to audit feature attributions and marginal gradient sign compliance. Figure~\ref{fig:monotonic_response}(a) plots the ceteris paribus partial response surface with respect to standardized Total Debt-to-Assets ($z_{D/A} \in [-2.0, +2.5]$), while Figure~\ref{fig:monotonic_response}(b) and Table~\ref{tab:xai_ranking} compare the global attribution shares and gradient sign violation rates between Unconstrained MLP and Proposed EINN.
 
-\begin{figure}[t!]
+\begin{figure*}[t]
 \centering
 \includegraphics[width=0.98\textwidth]{fig4_monotonic_response.pdf}
 \caption{(a) Ceteris paribus partial response surface of predicted forward distress probability $\hat{p}_{i,t+1}$ (\%) across standardized Debt-to-Assets ($z_{D/A}$) for Proposed EINN, Mono-GBDT, and Unconstrained MLP; (b) Top-8 global feature attribution shares (\%) computed via Integrated Gradients on the 2021--2022 out-of-time test cohort.}
 \label{fig:monotonic_response}
-\end{figure}
+\end{figure*}
 
-\begin{table}[t!]
+\begin{table*}[t]
 \centering
 \caption{Integrated Gradients global attribution share (\%) and out-of-time gradient sign violation rate (\%) for the top 10 predictors across Proposed EINN and Unconstrained MLP ($N_{\text{test}}=2,083$).}
 \label{tab:xai_ranking}
@@ -468,14 +472,14 @@ We apply Integrated Gradients \citep{sundararajan2017axiomatic} across all $N_{\
 \bottomrule
 \end{tabular}
 \vspace{-0.4em}
-\end{table}
+\end{table*}
 
 Table~\ref{tab:xai_ranking} exposes a striking diagnostic failure in the unconstrained neural baseline: because \texttt{roa} and \texttt{ebit\_to\_asset} are positively correlated, Unconstrained MLP assigns a large negative weight to \texttt{roa} ($13.03\%$ share) but partially offsets it by learning a \textit{positive} (risk-increasing) gradient on $\text{EBIT}_{\text{op}}/\text{Assets}$ for $31.11\%$ of test firms, a \textit{positive} gradient on $\text{Working Capital}/\text{Assets}$ for $17.04\%$ of test firms, and a \textit{negative} (risk-decreasing) gradient on $\text{Debt}/\text{Assets}$ for $67.16\%$ of test firms (visible in the downward-sloping dash-dotted curve of Figure~\ref{fig:monotonic_response}(a)). By contrast, Proposed EINN distributes attribution balancedly across profitability (\texttt{roe} $12.95\%$, \texttt{roa} $7.84\%$, \texttt{ebit\_to\_asset} $6.02\%$), cost structure (\texttt{opex\_to\_sales} $10.02\%$), working capital liquidity (\texttt{wc\_to\_asset} $7.40\%$), debt service coverage (\texttt{icr\_op} $6.49\%$), and short-term debt maturity concentration (\texttt{shortdebt\_to\_debt} $5.30\%$), with \textbf{zero gradient sign violations ($0.00\%$)} across all $2,083$ out-of-time firms.
 
 \subsection{Case Study: Early-Warning Audit of the 2022 Vietnamese Bond and Delisting Crisis}
 To demonstrate the practical supervisory value of our framework, we examine six prominent listed corporations that experienced severe bond defaults, regulatory trading suspensions, or mandatory delistings in 2022 (\texttt{FLC}, \texttt{HAI}, \texttt{BII}, \texttt{AMD}, \texttt{GAB}, and \texttt{VKC}), using solely their audited 2021 financial statements ($t=2021 \to \tau=2022$).
 
-\begin{table}[t!]
+\begin{table*}[t]
 \centering
 \caption{Early-warning audit of six major 2022 Vietnamese corporate bond and regulatory delisting crisis issuers based strictly on fiscal year 2021 statements ($t=2021 \to \tau=2022$). Note that Altman $Z''$-Score falsely classifies all six issuers as ``Safe'' ($Z'' > 2.60$).}
 \label{tab:case_studies}
@@ -495,7 +499,7 @@ To demonstrate the practical supervisory value of our framework, we examine six 
 \bottomrule
 \end{tabular}
 \vspace{-0.4em}
-\end{table}
+\end{table*}
 
 Table~\ref{tab:case_studies} reveals why traditional accounting scores failed during the 2022 Vietnamese market turmoil:
 \begin{itemize}
