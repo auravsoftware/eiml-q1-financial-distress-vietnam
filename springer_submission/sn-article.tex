@@ -15,7 +15,7 @@
 \usepackage{xcolor}
 \usepackage{float}
 \usepackage{geometry}
-\geometry{bottom=2cm, left=1.5cm, right=1.5cm}
+\geometry{top=2cm, bottom=2cm, left=1.2cm, right=1.2cm, columnsep=0.65cm}
 \definecolor{crimson}{RGB}{180, 20, 20}
 \usepackage{textcomp}
 \usepackage{manyfoot}
@@ -120,6 +120,7 @@ A growing body of literature examines corporate financial distress specifically 
 \footnotesize
 \renewcommand{\arraystretch}{1.15}
 %
+\resizebox{\textwidth}{!}{%
 \begin{tabular}{p{4.1cm}p{2.5cm}cccccc}
 \toprule
 \textbf{Study (Venue / Quartile)} & \textbf{Primary Paradigm} & \textbf{Non-Linear} & \textbf{Mono.\ Axiom} & \textbf{Bound.\ Prior} & \textbf{Strict OOT} & \textbf{Pre-IPO / Delist} & \textbf{Axiomatic XAI} \\
@@ -137,6 +138,7 @@ A growing body of literature examines corporate financial distress specifically 
 \textbf{This Study (Proposed EIML: Mono-GBDT \& EINN)} & \textbf{Theory-Constrained ML \& Deep Net} & $\mathbf{\checkmark}$ & $\mathbf{\checkmark}$ & $\mathbf{\checkmark}$ & $\mathbf{\checkmark}$ & $\mathbf{\checkmark}$ & $\mathbf{\checkmark}$ \\
 \bottomrule
 \end{tabular}
+}
 \vspace{-0.4em}
 \end{table*}
 
@@ -158,6 +160,7 @@ Our empirical investigation utilizes a comprehensive raw panel dataset (\texttt{
 \footnotesize
 \renewcommand{\arraystretch}{1.15}
 %
+\resizebox{\textwidth}{!}{%
 \begin{tabular}{clp{6.8cm}r}
 \toprule
 \textbf{Step} & \textbf{Forensic Anomaly Identified} & \textbf{Corrective Action \& Econometric Rationale} & \textbf{Affected Scope} \\
@@ -171,6 +174,7 @@ Our empirical investigation utilizes a comprehensive raw panel dataset (\texttt{
 7 & Post-Listing Delisting / Attrition Censoring & Flagged post-IPO firms losing exchange status (\texttt{Stockexchange == ""}) or failing to file 2022 statements post-distress as Condition 3 defaults. & $19$ terminal defaults \\
 \bottomrule
 \end{tabular}
+}
 \vspace{-0.4em}
 \end{table*}
 
@@ -181,12 +185,16 @@ Our empirical investigation utilizes a comprehensive raw panel dataset (\texttt{
     \item \textbf{Expense Sign Standardization:} Five income-statement outflow fields (\texttt{CostofGood}, \texttt{financialexp}, \texttt{interestexp}, \texttt{sellingexp}, \texttt{adminexp}) are recorded predominantly as negative numbers, but $40$ entries contain positive sign anomalies (e.g., \texttt{MSH} 2022, \texttt{ITA} 2022, \texttt{HAG} 2022, \texttt{NFC} 2018). All expense magnitudes are standardized via absolute value transformations: $C_{i,t} = |\text{CostofGood}_{i,t}|$, $S_{i,t} = |\text{sellingexp}_{i,t}|$, $A_{i,t} = |\text{adminexp}_{i,t}|$, and $F_{i,t} = |\text{financialexp}_{i,t}|$.
     \item \textbf{Zero-Look-Ahead Interest Imputation and Operating EBIT ($\text{EBIT}_{\text{op}}$) Reconstruction:} Exactly $1,376$ rows have missing \texttt{interestexp} while reporting valid \texttt{financialexp}. To prevent look-ahead leakage, we compute the median ratio of interest expense to financial expense strictly within the training split ($\text{Year} \le 2017$):
     \begin{equation}
-        \kappa_{\text{train}} = \operatorname{median}_{(i,t) \in \mathcal{D}_{\text{train}}} \left( \frac{|\text{interestexp}_{i,t}|}{|\text{financialexp}_{i,t}|} \right) = 0.852993,
+    \begin{aligned}
+        \kappa_{\text{train}} &= \operatorname{median}_{(i,t) \in \mathcal{D}_{\text{train}}} \left( \frac{|\text{interestexp}_{i,t}|}{|\text{financialexp}_{i,t}|} \right) \\
+        &= 0.852993,
+    \end{aligned}
     \end{equation}
     and define clean interest expense as $I_{i,t} = |\text{interestexp}_{i,t}|$ when observed, and $\kappa_{\text{train}} F_{i,t}$ otherwise. Crucially, we prove that defining $\text{EBIT}_{\text{naive}} = \text{NetProfit}_{i,t} + I_{i,t}$ reduces the condition $\text{ICR}_{\text{naive}} = \text{EBIT}_{\text{naive}} / I_{i,t} < 1.0$ to $\text{NetProfit}_{i,t} < 0$, creating a $100\%$ algebraic tautology. We eliminate this tautology by reconstructing true \textbf{Operating EBIT} from top-line accounting identities:
-    \begin{equation}
-        \text{EBIT}_{\text{op}, i, t} = \text{NetSales}_{i,t} - C_{i,t} - S_{i,t} - A_{i,t}, \qquad \text{ICR}_{\text{op}, i, t} = \frac{\text{EBIT}_{\text{op}, i, t}}{I_{i,t} + \epsilon},
-    \end{equation}
+    \begin{align}
+        \text{EBIT}_{\text{op}, i, t} &= \text{NetSales}_{i,t} - C_{i,t} - S_{i,t} - A_{i,t}, \\
+        \text{ICR}_{\text{op}, i, t} &= \frac{\text{EBIT}_{\text{op}, i, t}}{I_{i,t} + \epsilon},
+    \end{align}
     where $\epsilon = 1.0$ VND prevents division by zero for debt-free firms.
     \item \textbf{Pre-IPO Backfilling Isolation:} Exactly $1,570$ firm-year observations ($13.71\%$ of the raw panel, forming $1,562$ transition pairs) correspond to pre-IPO historical backfilling ($\text{Year}_{i,t} < \text{Listedyear}_i$). We isolate all pre-IPO records from the primary post-listing panel ($9,885$ post-IPO firm-years forming $7,602$ valid 1-year-ahead transition pairs).
     \item \textbf{Regulatory Delisting and Attrition Capture:} We identify $19$ post-listing firm transitions where a distressed issuer lost its exchange listing (\texttt{Stockexchange == ""}) or failed to file 2022 statements following severe 2021 distress (including crisis issuers \texttt{FLC}, \texttt{HAI}, \texttt{AMD}, \texttt{GAB}, \texttt{BII}, and \texttt{VKC}), incorporating them into Condition 3 of our distress definition.
@@ -196,8 +204,9 @@ Our empirical investigation utilizes a comprehensive raw panel dataset (\texttt{
 Following structural and emerging-market distress conventions \citep{asquith1994anatomy,pindado2008estimating,tinoco2013financial,tran2023examining}, a listed firm $i$ is classified as experiencing financial distress in outcome year $\tau = t+1$ ($D_{i,t+1} = 1$) if at least one of three objective conditions holds:
 \begin{equation}
 \begin{aligned}
-    D_{i,t+1} = \mathbb{I}\Big( &\underbrace{\big[\text{ICR}_{\text{op},i,t+1} < 1.0 \ \wedge \ \text{NetProfit}_{i,t+1} < 0\big]}_{\text{Condition 1: Acute Debt-Service Default Risk}} \\
-    &\vee \ \underbrace{\big[\text{Equity}_{i,t+1} < 0\big]}_{\text{Condition 2: Balance-Sheet Insolvency}} \ \vee \ \underbrace{\big[\text{DelistAttrition}_{i,t+1} = 1\big]}_{\text{Condition 3: Regulatory Delisting / Attrition}} \Big).
+    D_{i,t+1} = \mathbb{I}\Big( &\big[\text{ICR}_{\text{op},i,t+1} < 1.0 \wedge \text{NetProfit}_{i,t+1} < 0\big] \\
+    &\vee \big[\text{Equity}_{i,t+1} < 0\big] \\
+    &\vee \big[\text{DelistAttrition}_{i,t+1} = 1\big] \Big).
 \end{aligned}
 \end{equation}
 To resolve a fundamental ambiguity in the corporate distress literature, we evaluate all models across two distinct forecasting regimes:
@@ -230,6 +239,7 @@ Table~\ref{tab:features} details the $d=18$ financial ratios engineered at year 
 \footnotesize
 \renewcommand{\arraystretch}{1.12}
 %
+\resizebox{\textwidth}{!}{%
 \begin{tabular}{lllp{5.2cm}c}
 \toprule
 \textbf{Category} & \textbf{Feature Symbol} & \textbf{Ratio Name} & \textbf{Accounting Formula (Year $t$)} & \textbf{Axiom $s_j$} \\
@@ -263,6 +273,7 @@ Table~\ref{tab:features} details the $d=18$ financial ratios engineered at year 
   & \texttt{delta\_icr\_op} & Coverage Change ($\Delta \text{ICR}_{\text{op}}$) & $\text{ICR}_{\text{op},i,t} - \text{ICR}_{\text{op},i,t-1}$ & $0$ \\
 \bottomrule
 \end{tabular}
+}
 \vspace{-0.4em}
 \end{table*}
 
@@ -290,10 +301,12 @@ Let $\mathbf{x}_{i,t} \in \mathbb{R}^d$ ($d=18$) denote the training-standardize
 In Track A, we construct an additive ensemble of $M$ regression trees $F_M(\mathbf{x}) = F_0 + \eta \sum_{m=1}^M h_m(\mathbf{x})$ with predicted probability $\hat{p} = \sigma(F_M(\mathbf{x})) = (1 + e^{-F_M(\mathbf{x})})^{-1}$. At boosting iteration $m$, each candidate split on feature $j$ at threshold $\tau$ partitions a parent node $R$ into left child $R_L = \{\mathbf{x} \in R : x_j \le \tau\}$ and right child $R_R = \{\mathbf{x} \in R : x_j > \tau\}$ with optimal pseudo-residual leaf values $v_L^*, v_R^*$. To enforce partial monotonicity over $\mathcal{M}_+$ and $\mathcal{M}_-$, we apply a split-level projection and isotonic leaf regularization operator \citep{chen2016xgboost,ke2017lightgbm}:
 \begin{equation}
     (v_L^{\text{mono}}, v_R^{\text{mono}}) = \begin{cases}
-        \left(\frac{N_L v_L^* + N_R v_R^*}{N_L + N_R}, \, \frac{N_L v_L^* + N_R v_R^*}{N_L + N_R}\right) & \text{if } (s_j = +1 \wedge v_L^* > v_R^*) \ \vee \ (s_j = -1 \wedge v_L^* < v_R^*), \\[6pt]
+        (\bar{v}^*, \bar{v}^*) & \text{if } (s_j = +1 \wedge v_L^* > v_R^*) \\
+        & \quad \vee \ (s_j = -1 \wedge v_L^* < v_R^*), \\[4pt]
         (v_L^*, v_R^*) & \text{otherwise},
     \end{cases}
 \end{equation}
+where $\bar{v}^* = \frac{N_L v_L^* + N_R v_R^*}{N_L + N_R}$, 
 combined with monotonic ridge projection weights so that every tree $h_m(\mathbf{x})$ satisfies $s_j \big(h_m(\mathbf{x} + \delta \mathbf{e}_j) - h_m(\mathbf{x})\big) \ge 0$ for all $\delta > 0$.
 
 \subsection{Track B: Differentiable Economically-Informed Neural Network (Proposed EINN)}
@@ -303,27 +316,37 @@ In Track B, we design a differentiable neural architecture (\textbf{Proposed EIN
     \label{eq:einn_w1}
 \end{equation}
 All subsequent hidden-to-hidden and hidden-to-output weight matrices ($l = 2,\dots,L$) are parameterized to be strictly non-negative via $\mathbf{W}^{(l)} = \phi(\mathbf{U}^{(l)}) \ge 0$, coupled with monotonically non-decreasing smooth activation functions $\psi(z) = \tanh(z)$ and a skip-monotonic linear residual highway $\mathbf{w}_{\text{skip}} = \phi(\mathbf{u}_{\text{skip}}) \odot \mathbf{m}_+ - \phi(\mathbf{u}_{\text{skip}}) \odot \mathbf{m}_- + \mathbf{v}_{\text{skip}} \odot \mathbf{m}_0$:
-\begin{equation}
-    z_i = \mathbf{h}^{(L-1)}(\mathbf{x}_{i,t})^\top \phi(\mathbf{u}^{(L)}) + \mathbf{x}_{i,t}^\top \mathbf{w}_{\text{skip}} + b^{(L)}, \qquad \hat{p}_{i,t+1} = \sigma(z_i).
-\end{equation}
+\begin{align}
+    z_i &= \mathbf{h}^{(L-1)}(\mathbf{x}_{i,t})^\top \phi(\mathbf{u}^{(L)}) + \mathbf{x}_{i,t}^\top \mathbf{w}_{\text{skip}} + b^{(L)}, \\
+    \hat{p}_{i,t+1} &= \sigma(z_i).
+\end{align}
 By the chain rule of calculus, since $\sigma'(z) > 0$, $\psi'(\cdot) \ge 0$, and $\mathbf{W}^{(l)} \ge 0$ for $l \ge 2$, the partial derivative of $\hat{p}_{i,t+1}$ with respect to any input feature $x_j$ satisfies:
 \begin{equation}
-    \frac{\partial \hat{p}_{i,t+1}}{\partial x_{i,t,j}} = \sigma'(z_i)\left[ \sum_{h=1}^{H_1} W_{j,h}^{(1)} \psi'\big(a_{i,h}^{(1)}\big) \frac{\partial z_i}{\partial h_{i,h}^{(1)}} + w_{\text{skip},j} \right] \begin{cases}
+\begin{aligned}
+    \frac{\partial \hat{p}_{i,t+1}}{\partial x_{i,t,j}} &= \sigma'(z_i)\left[ \sum_{h=1}^{H_1} W_{j,h}^{(1)} \psi'\big(a_{i,h}^{(1)}\big) \frac{\partial z_i}{\partial h_{i,h}^{(1)}} + w_{\text{skip},j} \right] \\
+    &\begin{cases}
         \ge 0 & \forall j \in \mathcal{M}_+, \\
         \le 0 & \forall j \in \mathcal{M}_-.
     \end{cases}
+\end{aligned}
 \end{equation}
 Thus, Proposed EINN satisfies Axiom 1 (partial monotonicity) analytically across the entire input domain $\mathbb{R}^d$.
 
 \subsection{Composite Theory-Informed Loss Function and Structural Boundary Priors}
 To embed structural boundary conditions from \citet{merton1974pricing} and \citet{altman1995emerging}, we train Proposed EINN by minimizing a composite objective function:
 \begin{equation}
-    \mathcal{L}_{\text{EINN}}(\theta) = \mathcal{L}_{\text{Focal-BCE}}(\theta) + \lambda_{\text{mono}} \mathcal{L}_{\text{mono}}(\theta) + \lambda_{\text{bound}} \mathcal{L}_{\text{bound}}(\theta) + \lambda_2 \|\theta\|_2^2.
-    \label{eq:total_loss}
+\begin{aligned}
+    \mathcal{L}_{\text{EINN}}(\theta) &= \mathcal{L}_{\text{Focal-BCE}}(\theta) + \lambda_{\text{mono}} \mathcal{L}_{\text{mono}}(\theta) \\
+    &\quad + \lambda_{\text{bound}} \mathcal{L}_{\text{bound}}(\theta) + \lambda_2 \|\theta\|_2^2.
+\end{aligned}
+\label{eq:total_loss}
 \end{equation}
 Here, $\mathcal{L}_{\text{Focal-BCE}}$ is the class-balanced focal binary cross-entropy loss ($\gamma = 1.5$) designed for imbalanced credit transitions:
 \begin{equation}
-    \mathcal{L}_{\text{Focal-BCE}}(\theta) = -\frac{1}{N}\sum_{i=1}^N \Big[ w_+ y_i (1 - \hat{p}_i)^\gamma \ln(\hat{p}_i) + (1 - y_i)\hat{p}_i^\gamma \ln(1 - \hat{p}_i) \Big].
+\begin{aligned}
+    \mathcal{L}_{\text{Focal-BCE}}(\theta) = -\frac{1}{N}\sum_{i=1}^N \Big[ &w_+ y_i (1 - \hat{p}_i)^\gamma \ln(\hat{p}_i) \\
+    &+ (1 - y_i)\hat{p}_i^\gamma \ln(1 - \hat{p}_i) \Big].
+\end{aligned}
 \end{equation}
 The structural boundary penalty $\mathcal{L}_{\text{bound}}(\theta)$ enforces two asymptotic credit risk boundaries over a synthetic probe grid $\mathcal{B} = \mathcal{B}_{\text{safe}} \cup \mathcal{B}_{\text{def}}$:
 \begin{enumerate}
@@ -331,7 +354,10 @@ The structural boundary penalty $\mathcal{L}_{\text{bound}}(\theta)$ enforces tw
     \item \textbf{Altman Technical Insolvency Boundary ($\mathcal{B}_{\text{def}}$):} Conversely, when total liabilities exceed total assets ($z_{\text{debt\_to\_asset}} \ge +2.2$, corresponding to $D/A \ge 1.0$) and operating profitability is severely negative ($z_{\text{icr\_op}} \le -1.5$, $z_{\text{roa}} \le -1.8$), predicted distress probability must exceed a minimum distress floor $\tau_{\text{def}} = 0.50$:
 \end{enumerate}
 \begin{equation}
-    \mathcal{L}_{\text{bound}}(\theta) = \frac{1}{|\mathcal{B}_{\text{safe}}|} \sum_{\mathbf{x} \in \mathcal{B}_{\text{safe}}} \Big[\max\big(0, \, f_\theta(\mathbf{x}) - \epsilon_{\text{safe}}\big)\Big]^2 + \frac{1}{|\mathcal{B}_{\text{def}}|} \sum_{\mathbf{x} \in \mathcal{B}_{\text{def}}} \Big[\max\big(0, \, \tau_{\text{def}} - f_\theta(\mathbf{x})\big)\Big]^2.
+\begin{aligned}
+    \mathcal{L}_{\text{bound}}(\theta) &= \frac{1}{|\mathcal{B}_{\text{safe}}|} \sum_{\mathbf{x} \in \mathcal{B}_{\text{safe}}} \Big[\max\big(0, \, f_\theta(\mathbf{x}) - \epsilon_{\text{safe}}\big)\Big]^2 \\
+    &\quad + \frac{1}{|\mathcal{B}_{\text{def}}|} \sum_{\mathbf{x} \in \mathcal{B}_{\text{def}}} \Big[\max\big(0, \, \tau_{\text{def}} - f_\theta(\mathbf{x})\big)\Big]^2.
+\end{aligned}
 \end{equation}
 
 \subsection{Economic Consistency Score (ECS) and Violation Metrics}
@@ -339,7 +365,10 @@ To evaluate whether a model is simultaneously accurate and economically rational
 \begin{itemize}
     \item \textbf{Monotonicity Violation Rate ($\text{VR}_{\text{mono}}$):} The percentage of test observations $\mathbf{x}_i \in \mathcal{D}_{\text{test}}$ and monotonic features $j \in \mathcal{M}_+ \cup \mathcal{M}_-$ where a positive finite perturbation $\delta = 0.25$ violates the required comparative static sign:
     \begin{equation}
-        \text{VR}_{\text{mono}} = \frac{1}{|\mathcal{D}_{\text{test}}| \cdot |\mathcal{M}_+ \cup \mathcal{M}_-|} \sum_{i \in \mathcal{D}_{\text{test}}} \sum_{j \in \mathcal{M}_+ \cup \mathcal{M}_-} \mathbb{I}\Big( s_j \big[f_\theta(\mathbf{x}_i + \delta \mathbf{e}_j) - f_\theta(\mathbf{x}_i)\big] < -10^{-5} \Big) \times 100\%.
+    \begin{aligned}
+        \text{VR}_{\text{mono}} &= \frac{100\%}{|\mathcal{D}_{\text{test}}| \cdot |\mathcal{M}_+ \cup \mathcal{M}_-|} \sum_{i \in \mathcal{D}_{\text{test}}} \sum_{j \in \mathcal{M}_+ \cup \mathcal{M}_-} \\
+        &\quad \mathbb{I}\Big( s_j \big[f_\theta(\mathbf{x}_i + \delta \mathbf{e}_j) - f_\theta(\mathbf{x}_i)\big] < -10^{-5} \Big).
+    \end{aligned}
     \end{equation}
     \item \textbf{Boundary Violation Rate ($\text{VR}_{\text{bound}}$):} The percentage of structural boundary probes in $\mathcal{B}_{\text{safe}} \cup \mathcal{B}_{\text{def}}$ where the model violates $\hat{p} \le \epsilon_{\text{safe}}$ or $\hat{p} \ge \tau_{\text{def}}$.
     \item \textbf{Economic Consistency Score ($\text{ECS}$):} A composite rationality index in $[0\%, 100\%]$ weighting comparative-static monotonicity ($70\%$) and asymptotic boundary compliance ($30\%$):
@@ -364,6 +393,7 @@ We evaluate 9 benchmark and proposed models on the out-of-time test cohort $\mat
 \footnotesize
 \renewcommand{\arraystretch}{1.15}
 %
+\resizebox{\textwidth}{!}{%
 \begin{tabular}{llccccccc}
 \toprule
 \textbf{Regime / Target} & \textbf{Model Paradigm} & \textbf{ROC-AUC $\uparrow$} & \textbf{PR-AUC $\uparrow$} & \textbf{F1 $\uparrow$} & \textbf{Brier $\downarrow$} & \textbf{$\text{VR}_{\text{mono}}$ (\%) $\downarrow$} & \textbf{$\text{VR}_{\text{bound}}$ (\%) $\downarrow$} & \textbf{ECS (\%) $\uparrow$} \\
@@ -395,6 +425,7 @@ We evaluate 9 benchmark and proposed models on the out-of-time test cohort $\mat
   & \textbf{Proposed EINN (Ours)} & \textbf{0.9592} & \textbf{0.7658} & \textbf{0.7620} & \textbf{0.0590} & \textbf{0.00} & \textbf{0.00} & \textbf{100.00} \\
 \bottomrule
 \end{tabular}
+}
 \vspace{-0.4em}
 \end{table*}
 
@@ -423,6 +454,7 @@ To isolate the contribution of each structural component in Equation~(\ref{eq:to
 \footnotesize
 \renewcommand{\arraystretch}{1.15}
 %
+\resizebox{\textwidth}{!}{%
 \begin{tabular}{lcccccc}
 \toprule
 \textbf{Neural Architecture / Loss Configuration} & \textbf{ROC-AUC $\uparrow$} & \textbf{PR-AUC $\uparrow$} & \textbf{Brier $\downarrow$} & \textbf{$\text{VR}_{\text{mono}}$ (\%) $\downarrow$} & \textbf{$\text{VR}_{\text{bound}}$ (\%) $\downarrow$} & \textbf{ECS (\%) $\uparrow$} \\
@@ -433,6 +465,7 @@ To isolate the contribution of each structural component in Equation~(\ref{eq:to
 4. \textbf{Full Proposed EINN (Eq.~\ref{eq:einn_w1} + $\lambda_{\text{mono}}\mathcal{L}_{\text{mono}} + \lambda_{\text{bound}}\mathcal{L}_{\text{bound}}$)} & \textbf{0.7870} & \textbf{0.3517} & \textbf{0.0848} & \textbf{0.00} & \textbf{0.00} & \textbf{100.00} \\
 \bottomrule
 \end{tabular}
+}
 \vspace{-0.4em}
 \end{table*}
 
@@ -455,6 +488,7 @@ We apply Integrated Gradients \citep{sundararajan2017axiomatic} across all $N_{\
 \footnotesize
 \renewcommand{\arraystretch}{1.12}
 %
+\resizebox{\textwidth}{!}{%
 \begin{tabular}{clccccc}
 \toprule
 \textbf{Rank} & \textbf{Financial Ratio} & \textbf{Axiom $s_j$} & \textbf{EINN Share (\%)} & \textbf{MLP Share (\%)} & \textbf{MLP Sign Viol.\ (\%)} & \textbf{EINN Sign Viol.\ (\%)} \\
@@ -471,6 +505,7 @@ We apply Integrated Gradients \citep{sundararajan2017axiomatic} across all $N_{\
 16 & \texttt{debt\_to\_asset} (Total Debt / Assets) & $+1$ ($\mathcal{M}_+$) & 2.11 & 4.21 & \textcolor{crimson}{\textbf{67.16}} & \textbf{0.00} \\
 \bottomrule
 \end{tabular}
+}
 \vspace{-0.4em}
 \end{table*}
 
@@ -486,6 +521,7 @@ To demonstrate the practical supervisory value of our framework, we examine six 
 \footnotesize
 \renewcommand{\arraystretch}{1.15}
 %
+\resizebox{\textwidth}{!}{%
 \begin{tabular}{llcccccccc}
 \toprule
 \textbf{Ticker} & \textbf{ICB Sector (L2)} & \textbf{$D/A_{2021}$} & \textbf{$\text{STDebt}/D$} & \textbf{$\text{ICR}_{\text{op},2021}$} & \textbf{$\text{ROA}_{2021}$} & \textbf{Altman $Z''$} & \textbf{MLP $\hat{p}^{\text{fwd}}$} & \textbf{EINN $\hat{p}^{\text{fwd}}$} & \textbf{EINN $\hat{p}^{\text{ovl}}$} \\
@@ -498,6 +534,7 @@ To demonstrate the practical supervisory value of our framework, we examine six 
 \texttt{VKC} & Auto \& Components & 0.6423 & 0.7272 & $+0.9627$ & $+0.0034$ & 6.12 (Safe) & 0.2041 & \textbf{0.1211} & \textbf{0.1689} \\
 \bottomrule
 \end{tabular}
+}
 \vspace{-0.4em}
 \end{table*}
 
