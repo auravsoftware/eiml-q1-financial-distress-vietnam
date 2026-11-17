@@ -1,0 +1,868 @@
+%% BioMed_Central_Bib_Style_v1.01
+
+\begin{thebibliography}{53}
+% BibTex style file: bmc-mathphys.bst (version 2.1), 2014-07-24
+\ifx \bisbn   \undefined \def \bisbn  #1{ISBN #1}\fi
+\ifx \binits  \undefined \def \binits#1{#1}\fi
+\ifx \bauthor  \undefined \def \bauthor#1{#1}\fi
+\ifx \batitle  \undefined \def \batitle#1{#1}\fi
+\ifx \bjtitle  \undefined \def \bjtitle#1{#1}\fi
+\ifx \bvolume  \undefined \def \bvolume#1{\textbf{#1}}\fi
+\ifx \byear  \undefined \def \byear#1{#1}\fi
+\ifx \bissue  \undefined \def \bissue#1{#1}\fi
+\ifx \bfpage  \undefined \def \bfpage#1{#1}\fi
+\ifx \blpage  \undefined \def \blpage #1{#1}\fi
+\ifx \burl  \undefined \def \burl#1{\textsf{#1}}\fi
+\ifx \doiurl  \undefined \def \doiurl#1{\url{https://doi.org/#1}}\fi
+\ifx \betal  \undefined \def \betal{\textit{et al.}}\fi
+\ifx \binstitute  \undefined \def \binstitute#1{#1}\fi
+\ifx \binstitutionaled  \undefined \def \binstitutionaled#1{#1}\fi
+\ifx \bctitle  \undefined \def \bctitle#1{#1}\fi
+\ifx \beditor  \undefined \def \beditor#1{#1}\fi
+\ifx \bpublisher  \undefined \def \bpublisher#1{#1}\fi
+\ifx \bbtitle  \undefined \def \bbtitle#1{#1}\fi
+\ifx \bedition  \undefined \def \bedition#1{#1}\fi
+\ifx \bseriesno  \undefined \def \bseriesno#1{#1}\fi
+\ifx \blocation  \undefined \def \blocation#1{#1}\fi
+\ifx \bsertitle  \undefined \def \bsertitle#1{#1}\fi
+\ifx \bsnm \undefined \def \bsnm#1{#1}\fi
+\ifx \bsuffix \undefined \def \bsuffix#1{#1}\fi
+\ifx \bparticle \undefined \def \bparticle#1{#1}\fi
+\ifx \barticle \undefined \def \barticle#1{#1}\fi
+\bibcommenthead
+\ifx \bconfdate \undefined \def \bconfdate #1{#1}\fi
+\ifx \botherref \undefined \def \botherref #1{#1}\fi
+\ifx \url \undefined \def \url#1{\textsf{#1}}\fi
+\ifx \bchapter \undefined \def \bchapter#1{#1}\fi
+\ifx \bbook \undefined \def \bbook#1{#1}\fi
+\ifx \bcomment \undefined \def \bcomment#1{#1}\fi
+\ifx \oauthor \undefined \def \oauthor#1{#1}\fi
+\ifx \citeauthoryear \undefined \def \citeauthoryear#1{#1}\fi
+\ifx \endbibitem  \undefined \def \endbibitem {}\fi
+\ifx \bconflocation  \undefined \def \bconflocation#1{#1}\fi
+\ifx \arxivurl  \undefined \def \arxivurl#1{\textsf{#1}}\fi
+\csname PreBibitemsHook\endcsname
+
+%%% 1
+\bibitem[\protect\citeauthoryear{Beaver}{1966}]{beaver1966financial}
+\begin{barticle}
+\bauthor{\bsnm{Beaver}, \binits{W.H.}}:
+\batitle{Financial ratios as predictors of failure}.
+\bjtitle{Journal of Accounting Research}
+\bvolume{4},
+\bfpage{71}--\blpage{111}
+(\byear{1966})
+\doiurl{10.2307/2490171}
+\end{barticle}
+\endbibitem
+
+%%% 2
+\bibitem[\protect\citeauthoryear{Altman}{1968}]{altman1968financial}
+\begin{barticle}
+\bauthor{\bsnm{Altman}, \binits{E.I.}}:
+\batitle{Financial ratios, discriminant analysis and the prediction of
+  corporate bankruptcy}.
+\bjtitle{The Journal of Finance}
+\bvolume{23}(\bissue{4}),
+\bfpage{589}--\blpage{609}
+(\byear{1968})
+\doiurl{10.1111/j.1540-6261.1968.tb00843.x}
+\end{barticle}
+\endbibitem
+
+%%% 3
+\bibitem[\protect\citeauthoryear{Campbell et~al.}{2008}]{campbell2008search}
+\begin{barticle}
+\bauthor{\bsnm{Campbell}, \binits{J.Y.}},
+\bauthor{\bsnm{Hilscher}, \binits{J.}},
+\bauthor{\bsnm{Szilagyi}, \binits{J.}}:
+\batitle{In search of distress risk}.
+\bjtitle{The Journal of Finance}
+\bvolume{63}(\bissue{6}),
+\bfpage{2899}--\blpage{2939}
+(\byear{2008})
+\doiurl{10.1111/j.1540-6261.2008.01416.x}
+\end{barticle}
+\endbibitem
+
+%%% 4
+\bibitem[\protect\citeauthoryear{Altman et~al.}{1995}]{altman1995emerging}
+\begin{bchapter}
+\bauthor{\bsnm{Altman}, \binits{E.I.}},
+\bauthor{\bsnm{Hartzell}, \binits{J.}},
+\bauthor{\bsnm{Peck}, \binits{M.}}:
+\bctitle{An emerging market credit scoring system for corporate bonds}.
+In: \bbtitle{Emerging Markets Capital Flows},
+pp. \bfpage{1}--\blpage{21}.
+\bpublisher{New York University Salomon Center}, \blocation{???}
+(\byear{1995})
+\end{bchapter}
+\endbibitem
+
+%%% 5
+\bibitem[\protect\citeauthoryear{Pham Vo~Ninh et~al.}{2018}]{pham2018financial}
+\begin{barticle}
+\bauthor{\bsnm{Pham Vo~Ninh}, \binits{B.}},
+\bauthor{\bsnm{Do~Thanh}, \binits{T.}},
+\bauthor{\bsnm{Vo~Hong}, \binits{D.}}:
+\batitle{Financial distress and bankruptcy prediction: An appropriate model for
+  listed firms in {Vietnam}}.
+\bjtitle{Economic Systems}
+\bvolume{42}(\bissue{4}),
+\bfpage{616}--\blpage{624}
+(\byear{2018})
+\doiurl{10.1016/j.ecosys.2018.05.002}
+\end{barticle}
+\endbibitem
+
+%%% 6
+\bibitem[\protect\citeauthoryear{Tran et~al.}{2023}]{tran2023examining}
+\begin{barticle}
+\bauthor{\bsnm{Tran}, \binits{T.}},
+\bauthor{\bsnm{Nguyen}, \binits{N.H.}},
+\bauthor{\bsnm{Le}, \binits{B.T.}},
+\bauthor{\bsnm{Vu}, \binits{N.T.}},
+\bauthor{\bsnm{Vo}, \binits{D.H.}}:
+\batitle{Examining financial distress of the {Vietnamese} listed firms using
+  accounting-based models}.
+\bjtitle{PLOS ONE}
+\bvolume{18}(\bissue{5}),
+\bfpage{0284451}
+(\byear{2023})
+\doiurl{10.1371/journal.pone.0284451}
+\end{barticle}
+\endbibitem
+
+%%% 7
+\bibitem[\protect\citeauthoryear{Altman et~al.}{2017}]{altman2017financial}
+\begin{barticle}
+\bauthor{\bsnm{Altman}, \binits{E.I.}},
+\bauthor{\bsnm{Iwanicz-Drozdowska}, \binits{M.}},
+\bauthor{\bsnm{Laitinen}, \binits{E.K.}},
+\bauthor{\bsnm{Suvas}, \binits{A.}}:
+\batitle{Financial distress prediction in an international context: A review
+  and empirical analysis of altman's z-score model}.
+\bjtitle{Journal of International Financial Management \& Accounting}
+\bvolume{28}(\bissue{2}),
+\bfpage{131}--\blpage{171}
+(\byear{2017})
+\doiurl{10.1111/jifm.12053}
+\end{barticle}
+\endbibitem
+
+%%% 8
+\bibitem[\protect\citeauthoryear{Ohlson}{1980}]{ohlson1980financial}
+\begin{barticle}
+\bauthor{\bsnm{Ohlson}, \binits{J.A.}}:
+\batitle{Financial ratios and the probabilistic prediction of bankruptcy}.
+\bjtitle{Journal of Accounting Research}
+\bvolume{18},
+\bfpage{109}--\blpage{131}
+(\byear{1980})
+\doiurl{10.2307/2490395}
+\end{barticle}
+\endbibitem
+
+%%% 9
+\bibitem[\protect\citeauthoryear{Zmijewski}{1984}]{zmijewski1984methodological}
+\begin{barticle}
+\bauthor{\bsnm{Zmijewski}, \binits{M.E.}}:
+\batitle{Methodological issues related to the estimation of financial distress
+  prediction models}.
+\bjtitle{Journal of Accounting Research}
+\bvolume{22},
+\bfpage{59}--\blpage{82}
+(\byear{1984})
+\doiurl{10.2307/2490859}
+\end{barticle}
+\endbibitem
+
+%%% 10
+\bibitem[\protect\citeauthoryear{Shumway}{2001}]{shumway2001forecasting}
+\begin{barticle}
+\bauthor{\bsnm{Shumway}, \binits{T.}}:
+\batitle{Forecasting bankruptcy more accurately: A simple hazard model}.
+\bjtitle{The Journal of Business}
+\bvolume{74},
+\bfpage{101}--\blpage{124}
+(\byear{2001})
+\doiurl{10.1086/209665}
+\end{barticle}
+\endbibitem
+
+%%% 11
+\bibitem[\protect\citeauthoryear{Chava and Jarrow}{2004}]{chava2004bankruptcy}
+\begin{barticle}
+\bauthor{\bsnm{Chava}, \binits{S.}},
+\bauthor{\bsnm{Jarrow}, \binits{R.A.}}:
+\batitle{Bankruptcy prediction with industry effects}.
+\bjtitle{Review of Finance}
+\bvolume{8}(\bissue{4}),
+\bfpage{537}--\blpage{569}
+(\byear{2004})
+\doiurl{10.1093/rof/8.4.537}
+\end{barticle}
+\endbibitem
+
+%%% 12
+\bibitem[\protect\citeauthoryear{Bauer and Agarwal}{2014}]{bauer2014are}
+\begin{barticle}
+\bauthor{\bsnm{Bauer}, \binits{J.}},
+\bauthor{\bsnm{Agarwal}, \binits{V.}}:
+\batitle{Are hazard models superior to traditional bankruptcy prediction
+  approaches? a comprehensive test}.
+\bjtitle{Journal of Banking \& Finance}
+\bvolume{40},
+\bfpage{432}--\blpage{442}
+(\byear{2014})
+\doiurl{10.1016/j.jbankfin.2013.12.013}
+\end{barticle}
+\endbibitem
+
+%%% 13
+\bibitem[\protect\citeauthoryear{Merton}{1974}]{merton1974pricing}
+\begin{barticle}
+\bauthor{\bsnm{Merton}, \binits{R.C.}}:
+\batitle{On the pricing of corporate debt: The risk structure of interest
+  rates}.
+\bjtitle{The Journal of Finance}
+\bvolume{29}(\bissue{2}),
+\bfpage{449}--\blpage{470}
+(\byear{1974})
+\doiurl{10.1111/j.1540-6261.1974.tb03058.x}
+\end{barticle}
+\endbibitem
+
+%%% 14
+\bibitem[\protect\citeauthoryear{Hillegeist
+  et~al.}{2004}]{hillegeist2004assessing}
+\begin{barticle}
+\bauthor{\bsnm{Hillegeist}, \binits{S.A.}},
+\bauthor{\bsnm{Keating}, \binits{E.K.}},
+\bauthor{\bsnm{Cram}, \binits{D.P.}},
+\bauthor{\bsnm{Lundstedt}, \binits{K.G.}}:
+\batitle{Assessing the probability of bankruptcy}.
+\bjtitle{Review of Accounting Studies}
+\bvolume{341},
+\bfpage{5}--\blpage{34}
+(\byear{2004})
+\doiurl{10.1023/B:RAST.0000013627.90884.b7}
+\end{barticle}
+\endbibitem
+
+%%% 15
+\bibitem[\protect\citeauthoryear{Duffie et~al.}{2007}]{duffie2007multi}
+\begin{barticle}
+\bauthor{\bsnm{Duffie}, \binits{D.}},
+\bauthor{\bsnm{Saita}, \binits{L.}},
+\bauthor{\bsnm{Wang}, \binits{K.}}:
+\batitle{Multi-period corporate default prediction with stochastic covariates}.
+\bjtitle{Journal of Financial Economics}
+\bvolume{83}(\bissue{3}),
+\bfpage{635}--\blpage{665}
+(\byear{2007})
+\doiurl{10.1016/j.jfineco.2005.10.011}
+\end{barticle}
+\endbibitem
+
+%%% 16
+\bibitem[\protect\citeauthoryear{Bharath and
+  Shumway}{2008}]{bharath2008forecasting}
+\begin{barticle}
+\bauthor{\bsnm{Bharath}, \binits{S.T.}},
+\bauthor{\bsnm{Shumway}, \binits{T.}}:
+\batitle{Forecasting default with the merton distance to default model}.
+\bjtitle{The Review of Financial Studies}
+\bvolume{21}(\bissue{3}),
+\bfpage{1339}--\blpage{1369}
+(\byear{2008})
+\doiurl{10.1093/rfs/hhn044}
+\end{barticle}
+\endbibitem
+
+%%% 17
+\bibitem[\protect\citeauthoryear{Breiman}{2001}]{breiman2001random}
+\begin{barticle}
+\bauthor{\bsnm{Breiman}, \binits{L.}}:
+\batitle{Random forests}.
+\bjtitle{Machine Learning}
+\bvolume{45},
+\bfpage{5}--\blpage{32}
+(\byear{2001})
+\doiurl{10.1023/A:1010933404324}
+\end{barticle}
+\endbibitem
+
+%%% 18
+\bibitem[\protect\citeauthoryear{Chen and Guestrin}{2016}]{chen2016xgboost}
+\begin{bchapter}
+\bauthor{\bsnm{Chen}, \binits{T.}},
+\bauthor{\bsnm{Guestrin}, \binits{C.}}:
+\bctitle{{XGBoost}: A scalable tree boosting system}.
+In: \bbtitle{Proceedings of the 22nd ACM SIGKDD International Conference on
+  Knowledge Discovery and Data Mining},
+pp. \bfpage{785}--\blpage{794}
+(\byear{2016}).
+\doiurl{10.1145/2939672.2939785}
+\end{bchapter}
+\endbibitem
+
+%%% 19
+\bibitem[\protect\citeauthoryear{Ke et~al.}{2017}]{ke2017lightgbm}
+\begin{bchapter}
+\bauthor{\bsnm{Ke}, \binits{G.}},
+\bauthor{\bsnm{Meng}, \binits{Q.}},
+\bauthor{\bsnm{Finley}, \binits{T.}},
+\bauthor{\bsnm{Wang}, \binits{T.}},
+\bauthor{\bsnm{Chen}, \binits{W.}},
+\bauthor{\bsnm{Ma}, \binits{W.}},
+\bauthor{\bsnm{Ye}, \binits{Q.}},
+\bauthor{\bsnm{Liu}, \binits{T.-Y.}}:
+\bctitle{{LightGBM}: A highly efficient gradient boosting decision tree}.
+In: \bbtitle{Advances in Neural Information Processing Systems (NeurIPS)},
+vol. \bseriesno{30},
+pp. \bfpage{3146}--\blpage{3154}
+(\byear{2017})
+\end{bchapter}
+\endbibitem
+
+%%% 20
+\bibitem[\protect\citeauthoryear{Prokhorenkova
+  et~al.}{2018}]{prokhorenkova2018catboost}
+\begin{bchapter}
+\bauthor{\bsnm{Prokhorenkova}, \binits{L.}},
+\bauthor{\bsnm{Gusev}, \binits{G.}},
+\bauthor{\bsnm{Vorobev}, \binits{A.}},
+\bauthor{\bsnm{Dorogush}, \binits{A.V.}},
+\bauthor{\bsnm{Gulin}, \binits{A.}}:
+\bctitle{{CatBoost}: Unbiased boosting with categorical features}.
+In: \bbtitle{Advances in Neural Information Processing Systems (NeurIPS)},
+vol. \bseriesno{31},
+pp. \bfpage{6638}--\blpage{6648}
+(\byear{2018})
+\end{bchapter}
+\endbibitem
+
+%%% 21
+\bibitem[\protect\citeauthoryear{Lessmann
+  et~al.}{2015}]{lessmann2015benchmarking}
+\begin{barticle}
+\bauthor{\bsnm{Lessmann}, \binits{S.}},
+\bauthor{\bsnm{Baesens}, \binits{B.}},
+\bauthor{\bsnm{Seow}, \binits{H.-V.}},
+\bauthor{\bsnm{Thomas}, \binits{L.C.}}:
+\batitle{Benchmarking state-of-the-art classification algorithms for credit
+  scoring: An update of research}.
+\bjtitle{European Journal of Operational Research}
+\bvolume{247},
+\bfpage{124}--\blpage{136}
+(\byear{2015})
+\doiurl{10.1016/j.ejor.2015.05.030}
+\end{barticle}
+\endbibitem
+
+%%% 22
+\bibitem[\protect\citeauthoryear{Zi{\k{e}}ba et~al.}{2016}]{zieba2016ensemble}
+\begin{barticle}
+\bauthor{\bsnm{Zi{\k{e}}ba}, \binits{M.}},
+\bauthor{\bsnm{Tomczak}, \binits{S.K.}},
+\bauthor{\bsnm{Tomczak}, \binits{J.M.}}:
+\batitle{Ensemble boosted trees with synthetic features generation in
+  application to bankruptcy prediction}.
+\bjtitle{Expert Systems with Applications}
+\bvolume{58},
+\bfpage{93}--\blpage{101}
+(\byear{2016})
+\doiurl{10.1016/j.eswa.2016.04.001}
+\end{barticle}
+\endbibitem
+
+%%% 23
+\bibitem[\protect\citeauthoryear{Barboza et~al.}{2017}]{barboza2017machine}
+\begin{barticle}
+\bauthor{\bsnm{Barboza}, \binits{F.}},
+\bauthor{\bsnm{Kimura}, \binits{H.}},
+\bauthor{\bsnm{Altman}, \binits{E.}}:
+\batitle{Machine learning models and bankruptcy prediction}.
+\bjtitle{Expert Systems with Applications}
+\bvolume{83},
+\bfpage{405}--\blpage{417}
+(\byear{2017})
+\doiurl{10.1016/j.eswa.2017.04.006}
+\end{barticle}
+\endbibitem
+
+%%% 24
+\bibitem[\protect\citeauthoryear{Mai et~al.}{2019}]{mai2019deep}
+\begin{barticle}
+\bauthor{\bsnm{Mai}, \binits{F.}},
+\bauthor{\bsnm{Tian}, \binits{S.}},
+\bauthor{\bsnm{Lee}, \binits{C.}},
+\bauthor{\bsnm{Ma}, \binits{L.}}:
+\batitle{Deep learning for bankruptcy prediction: Textual disclosures and
+  accounting variables}.
+\bjtitle{Journal of Banking \& Finance}
+\bvolume{100},
+\bfpage{262}--\blpage{282}
+(\byear{2019})
+\doiurl{10.1016/j.jbankfin.2019.01.003}
+\end{barticle}
+\endbibitem
+
+%%% 25
+\bibitem[\protect\citeauthoryear{Hosaka}{2019}]{hosaka2019bankruptcy}
+\begin{barticle}
+\bauthor{\bsnm{Hosaka}, \binits{T.}}:
+\batitle{Bankruptcy prediction using imaged financial ratios and convolutional
+  neural networks}.
+\bjtitle{Expert Systems with Applications}
+\bvolume{117},
+\bfpage{287}--\blpage{299}
+(\byear{2019})
+\doiurl{10.1016/j.eswa.2018.09.039}
+\end{barticle}
+\endbibitem
+
+%%% 26
+\bibitem[\protect\citeauthoryear{Gunnarsson et~al.}{2021}]{gunnarsson2021deep}
+\begin{barticle}
+\bauthor{\bsnm{Gunnarsson}, \binits{B.R.}},
+\bauthor{\bsnm{Broucke}, \binits{S.}},
+\bauthor{\bsnm{Baesens}, \binits{B.}},
+\bauthor{\bsnm{{\'O}skarsd{\'o}ttir}, \binits{M.}},
+\bauthor{\bsnm{Lemahieu}, \binits{W.}}:
+\batitle{Deep learning for credit scoring: Do or don't?}
+\bjtitle{European Journal of Operational Research}
+\bvolume{295},
+\bfpage{292}--\blpage{305}
+(\byear{2021})
+\doiurl{10.1016/j.ejor.2021.03.006}
+\end{barticle}
+\endbibitem
+
+%%% 27
+\bibitem[\protect\citeauthoryear{Bussmann
+  et~al.}{2021}]{bussmann2021explainable}
+\begin{barticle}
+\bauthor{\bsnm{Bussmann}, \binits{N.}},
+\bauthor{\bsnm{Giudici}, \binits{P.}},
+\bauthor{\bsnm{Marinelli}, \binits{D.}},
+\bauthor{\bsnm{Papenbrock}, \binits{J.}}:
+\batitle{Explainable machine learning in credit risk management}.
+\bjtitle{Computational Economics}
+\bvolume{57},
+\bfpage{203}--\blpage{216}
+(\byear{2021})
+\doiurl{10.1007/s10614-020-10042-0}
+\end{barticle}
+\endbibitem
+
+%%% 28
+\bibitem[\protect\citeauthoryear{B{\"u}cker
+  et~al.}{2022}]{bucker2022transparency}
+\begin{barticle}
+\bauthor{\bsnm{B{\"u}cker}, \binits{M.}},
+\bauthor{\bsnm{Szepannek}, \binits{G.}},
+\bauthor{\bsnm{Gosiewska}, \binits{A.}},
+\bauthor{\bsnm{Biecek}, \binits{P.}}:
+\batitle{Transparency, auditability, and explainability of machine learning
+  models in credit scoring}.
+\bjtitle{Journal of the Operational Research Society}
+\bvolume{73},
+\bfpage{70}--\blpage{90}
+(\byear{2022})
+\doiurl{10.1080/01605682.2021.1922098}
+\end{barticle}
+\endbibitem
+
+%%% 29
+\bibitem[\protect\citeauthoryear{Dumitrescu
+  et~al.}{2022}]{dumitrescu2022machine}
+\begin{barticle}
+\bauthor{\bsnm{Dumitrescu}, \binits{E.}},
+\bauthor{\bsnm{Hu{\'e}}, \binits{S.}},
+\bauthor{\bsnm{Hurlin}, \binits{C.}},
+\bauthor{\bsnm{Tokpavi}, \binits{S.}}:
+\batitle{Machine learning for credit scoring: Improving logistic regression
+  with non-linear decision-tree effects}.
+\bjtitle{European Journal of Operational Research}
+\bvolume{297}(\bissue{3}),
+\bfpage{1178}--\blpage{1192}
+(\byear{2022})
+\doiurl{10.1016/j.ejor.2021.06.053}
+\end{barticle}
+\endbibitem
+
+%%% 30
+\bibitem[\protect\citeauthoryear{Bailey et~al.}{2014}]{bailey2014pseudo}
+\begin{barticle}
+\bauthor{\bsnm{Bailey}, \binits{D.H.}},
+\bauthor{\bsnm{Borwein}, \binits{J.M.}},
+\bauthor{\bsnm{Prado}, \binits{M.}},
+\bauthor{\bsnm{Zhu}, \binits{Q.J.}}:
+\batitle{Pseudo-mathematics and financial charlatanism: The effects of backtest
+  overfitting on out-of-sample performance}.
+\bjtitle{Notices of the American Mathematical Society}
+\bvolume{61}(\bissue{5}),
+\bfpage{458}--\blpage{471}
+(\byear{2014})
+\doiurl{10.1090/noti1105}
+\end{barticle}
+\endbibitem
+
+%%% 31
+\bibitem[\protect\citeauthoryear{L{\'o}pez~de Prado}{2018}]{lopez2018advances}
+\begin{bbook}
+\bauthor{\bsnm{Prado}, \binits{M.}}:
+\bbtitle{Advances in Financial Machine Learning}.
+\bpublisher{John Wiley \& Sons}, \blocation{???}
+(\byear{2018})
+\end{bbook}
+\endbibitem
+
+%%% 32
+\bibitem[\protect\citeauthoryear{Vo et~al.}{2019}]{vo2019corporate}
+\begin{barticle}
+\bauthor{\bsnm{Vo}, \binits{D.H.}},
+\bauthor{\bsnm{Pham}, \binits{B.N.V.}},
+\bauthor{\bsnm{Ho}, \binits{C.M.}},
+\bauthor{\bsnm{McAleer}, \binits{M.}}:
+\batitle{Corporate financial distress of industry level listings in {Vietnam}}.
+\bjtitle{Journal of Risk and Financial Management}
+\bvolume{12}(\bissue{4}),
+\bfpage{155}
+(\byear{2019})
+\doiurl{10.3390/jrfm12040155}
+\end{barticle}
+\endbibitem
+
+%%% 33
+\bibitem[\protect\citeauthoryear{Tran et~al.}{2022}]{tran2022explainable}
+\begin{barticle}
+\bauthor{\bsnm{Tran}, \binits{K.L.}},
+\bauthor{\bsnm{Le}, \binits{H.A.}},
+\bauthor{\bsnm{Nguyen}, \binits{T.H.}},
+\bauthor{\bsnm{Nguyen}, \binits{D.T.}}:
+\batitle{Explainable machine learning for financial distress prediction:
+  Evidence from {Vietnam}}.
+\bjtitle{Data}
+\bvolume{7}(\bissue{11}),
+\bfpage{160}
+(\byear{2022})
+\doiurl{10.3390/data7110160}
+\end{barticle}
+\endbibitem
+
+%%% 34
+\bibitem[\protect\citeauthoryear{Vu et~al.}{2023}]{vu2023lasso}
+\begin{barticle}
+\bauthor{\bsnm{Vu}, \binits{N.T.}},
+\bauthor{\bsnm{Nguyen}, \binits{N.H.}},
+\bauthor{\bsnm{Tran}, \binits{T.}},
+\bauthor{\bsnm{Le}, \binits{B.T.}},
+\bauthor{\bsnm{Vo}, \binits{D.H.}}:
+\batitle{A {LASSO}-based model for financial distress of the {Vietnamese}
+  listed firms: Does the covid-19 pandemic matter?}
+\bjtitle{Cogent Economics \& Finance}
+\bvolume{11},
+\bfpage{2210361}
+(\byear{2023})
+\doiurl{10.1080/23322039.2023.2210361}
+\end{barticle}
+\endbibitem
+
+%%% 35
+\bibitem[\protect\citeauthoryear{Raissi et~al.}{2019}]{raissi2019physics}
+\begin{barticle}
+\bauthor{\bsnm{Raissi}, \binits{M.}},
+\bauthor{\bsnm{Perdikaris}, \binits{P.}},
+\bauthor{\bsnm{Karniadakis}, \binits{G.E.}}:
+\batitle{Physics-informed neural networks: A deep learning framework for
+  solving forward and inverse problems involving nonlinear partial differential
+  equations}.
+\bjtitle{Journal of Computational Physics}
+\bvolume{378},
+\bfpage{686}--\blpage{707}
+(\byear{2019})
+\doiurl{10.1016/j.jcp.2018.10.045}
+\end{barticle}
+\endbibitem
+
+%%% 36
+\bibitem[\protect\citeauthoryear{Karniadakis
+  et~al.}{2021}]{karniadakis2021physics}
+\begin{barticle}
+\bauthor{\bsnm{Karniadakis}, \binits{G.E.}},
+\bauthor{\bsnm{Kevrekidis}, \binits{I.G.}},
+\bauthor{\bsnm{Lu}, \binits{L.}},
+\bauthor{\bsnm{Perdikaris}, \binits{P.}},
+\bauthor{\bsnm{Wang}, \binits{S.}},
+\bauthor{\bsnm{Yang}, \binits{L.}}:
+\batitle{Physics-informed machine learning}.
+\bjtitle{Nature Reviews Physics}
+\bvolume{3}(\bissue{6}),
+\bfpage{422}--\blpage{440}
+(\byear{2021})
+\doiurl{10.1038/s42254-021-00314-5}
+\end{barticle}
+\endbibitem
+
+%%% 37
+\bibitem[\protect\citeauthoryear{Sill}{1997}]{sill1997monotonic}
+\begin{bchapter}
+\bauthor{\bsnm{Sill}, \binits{J.}}:
+\bctitle{Monotonic networks}.
+In: \bbtitle{Advances in Neural Information Processing Systems (NIPS)},
+vol. \bseriesno{10},
+pp. \bfpage{661}--\blpage{667}
+(\byear{1997})
+\end{bchapter}
+\endbibitem
+
+%%% 38
+\bibitem[\protect\citeauthoryear{You et~al.}{2017}]{you2017deep}
+\begin{bchapter}
+\bauthor{\bsnm{You}, \binits{S.}},
+\bauthor{\bsnm{Ding}, \binits{D.}},
+\bauthor{\bsnm{Canini}, \binits{K.}},
+\bauthor{\bsnm{Pfeifer}, \binits{J.}},
+\bauthor{\bsnm{Gupta}, \binits{M.}}:
+\bctitle{Deep lattice networks and partial monotonic functions}.
+In: \bbtitle{Advances in Neural Information Processing Systems (NeurIPS)},
+vol. \bseriesno{30},
+pp. \bfpage{2981}--\blpage{2989}
+(\byear{2017})
+\end{bchapter}
+\endbibitem
+
+%%% 39
+\bibitem[\protect\citeauthoryear{Runje and
+  Shankaranarayana}{2023}]{runje2023constrained}
+\begin{bchapter}
+\bauthor{\bsnm{Runje}, \binits{D.}},
+\bauthor{\bsnm{Shankaranarayana}, \binits{S.M.}}:
+\bctitle{Constrained monotonic neural networks}.
+In: \bbtitle{Proceedings of the 40th International Conference on Machine
+  Learning (ICML)},
+vol. \bseriesno{202},
+pp. \bfpage{29338}--\blpage{29353}
+(\byear{2023}).
+\bcomment{PMLR}
+\end{bchapter}
+\endbibitem
+
+%%% 40
+\bibitem[\protect\citeauthoryear{Sundararajan
+  et~al.}{2017}]{sundararajan2017axiomatic}
+\begin{bchapter}
+\bauthor{\bsnm{Sundararajan}, \binits{M.}},
+\bauthor{\bsnm{Taly}, \binits{A.}},
+\bauthor{\bsnm{Yan}, \binits{Q.}}:
+\bctitle{Axiomatic attribution for deep networks}.
+In: \bbtitle{Proceedings of the 34th International Conference on Machine
+  Learning (ICML)},
+vol. \bseriesno{70},
+pp. \bfpage{3319}--\blpage{3328}
+(\byear{2017}).
+\bcomment{PMLR}
+\end{bchapter}
+\endbibitem
+
+%%% 41
+\bibitem[\protect\citeauthoryear{Tinoco and Wilson}{2013}]{tinoco2013financial}
+\begin{barticle}
+\bauthor{\bsnm{Tinoco}, \binits{M.H.}},
+\bauthor{\bsnm{Wilson}, \binits{N.}}:
+\batitle{Financial distress and bankruptcy prediction among listed companies
+  using accounting, market and macroeconomic variables}.
+\bjtitle{International Review of Financial Analysis}
+\bvolume{30},
+\bfpage{394}--\blpage{419}
+(\byear{2013})
+\doiurl{10.1016/j.irfa.2013.02.013}
+\end{barticle}
+\endbibitem
+
+%%% 42
+\bibitem[\protect\citeauthoryear{Kraus and Litzenberger}{1973}]{kraus1973state}
+\begin{barticle}
+\bauthor{\bsnm{Kraus}, \binits{A.}},
+\bauthor{\bsnm{Litzenberger}, \binits{R.H.}}:
+\batitle{A state-preference model of optimal financial leverage}.
+\bjtitle{The Journal of Finance}
+\bvolume{28}(\bissue{4}),
+\bfpage{911}--\blpage{922}
+(\byear{1973})
+\doiurl{10.1111/j.1540-6261.1973.tb01415.x}
+\end{barticle}
+\endbibitem
+
+%%% 43
+\bibitem[\protect\citeauthoryear{Myers}{1984}]{myers1984capital}
+\begin{barticle}
+\bauthor{\bsnm{Myers}, \binits{S.C.}}:
+\batitle{The capital structure puzzle}.
+\bjtitle{The Journal of Finance}
+\bvolume{39}(\bissue{3}),
+\bfpage{574}--\blpage{592}
+(\byear{1984})
+\doiurl{10.1111/j.1540-6261.1984.tb03646.x}
+\end{barticle}
+\endbibitem
+
+%%% 44
+\bibitem[\protect\citeauthoryear{Asquith et~al.}{1994}]{asquith1994anatomy}
+\begin{barticle}
+\bauthor{\bsnm{Asquith}, \binits{P.}},
+\bauthor{\bsnm{Gertner}, \binits{R.}},
+\bauthor{\bsnm{Scharfstein}, \binits{D.}}:
+\batitle{Anatomy of financial distress: An examination of junk-bond issuers}.
+\bjtitle{The Quarterly Journal of Economics}
+\bvolume{109}(\bissue{3}),
+\bfpage{625}--\blpage{658}
+(\byear{1994})
+\doiurl{10.2307/2118416}
+\end{barticle}
+\endbibitem
+
+%%% 45
+\bibitem[\protect\citeauthoryear{Pindado et~al.}{2008}]{pindado2008estimating}
+\begin{barticle}
+\bauthor{\bsnm{Pindado}, \binits{J.}},
+\bauthor{\bsnm{Rodrigues}, \binits{L.}},
+\bauthor{\bsnm{Torre}, \binits{C.}}:
+\batitle{Estimating financial distress likelihood}.
+\bjtitle{Journal of Business Research}
+\bvolume{61}(\bissue{9}),
+\bfpage{995}--\blpage{1003}
+(\byear{2008})
+\doiurl{10.1016/j.jbusres.2007.10.006}
+\end{barticle}
+\endbibitem
+
+%%% 46
+\bibitem[\protect\citeauthoryear{Kumar and Ravi}{2007}]{kumar2007bankruptcy}
+\begin{barticle}
+\bauthor{\bsnm{Kumar}, \binits{P.R.}},
+\bauthor{\bsnm{Ravi}, \binits{V.}}:
+\batitle{Bankruptcy prediction in banks and firms via statistical and
+  intelligent techniques--a review}.
+\bjtitle{European Journal of Operational Research}
+\bvolume{180},
+\bfpage{1}--\blpage{28}
+(\byear{2007})
+\doiurl{10.1016/j.ejor.2006.08.043}
+\end{barticle}
+\endbibitem
+
+%%% 47
+\bibitem[\protect\citeauthoryear{Jones et~al.}{2017}]{jones2017predicting}
+\begin{barticle}
+\bauthor{\bsnm{Jones}, \binits{S.}},
+\bauthor{\bsnm{Johnstone}, \binits{D.}},
+\bauthor{\bsnm{Wilson}, \binits{R.}}:
+\batitle{Predicting corporate bankruptcy: An evaluation of alternative
+  statistical frameworks}.
+\bjtitle{Journal of Business Finance \& Accounting}
+\bvolume{44}(\bissue{1-2}),
+\bfpage{3}--\blpage{34}
+(\byear{2017})
+\doiurl{10.1111/jbfa.12218}
+\end{barticle}
+\endbibitem
+
+%%% 48
+\bibitem[\protect\citeauthoryear{Geng et~al.}{2015}]{geng2015prediction}
+\begin{barticle}
+\bauthor{\bsnm{Geng}, \binits{R.}},
+\bauthor{\bsnm{Bose}, \binits{I.}},
+\bauthor{\bsnm{Chen}, \binits{X.}}:
+\batitle{Prediction of financial distress: An empirical study of listed chinese
+  companies using data mining}.
+\bjtitle{European Journal of Operational Research}
+\bvolume{241},
+\bfpage{236}--\blpage{247}
+(\byear{2015})
+\doiurl{10.1016/j.ejor.2014.08.016}
+\end{barticle}
+\endbibitem
+
+%%% 49
+\bibitem[\protect\citeauthoryear{Veganzones and
+  S{\'e}verin}{2018}]{veganzones2018investigation}
+\begin{barticle}
+\bauthor{\bsnm{Veganzones}, \binits{D.}},
+\bauthor{\bsnm{S{\'e}verin}, \binits{E.}}:
+\batitle{An investigation of bankruptcy prediction in imbalanced datasets}.
+\bjtitle{Decision Support Systems}
+\bvolume{112},
+\bfpage{111}--\blpage{124}
+(\byear{2018})
+\doiurl{10.1016/j.dss.2018.06.011}
+\end{barticle}
+\endbibitem
+
+%%% 50
+\bibitem[\protect\citeauthoryear{du~Jardin}{2015}]{dujardin2015bankruptcy}
+\begin{barticle}
+\bauthor{\bsnm{Jardin}, \binits{P.}}:
+\batitle{Bankruptcy prediction using terminal failure processes}.
+\bjtitle{European Journal of Operational Research}
+\bvolume{242},
+\bfpage{286}--\blpage{303}
+(\byear{2015})
+\doiurl{10.1016/j.ejor.2014.09.059}
+\end{barticle}
+\endbibitem
+
+%%% 51
+\bibitem[\protect\citeauthoryear{Gupta et~al.}{2016}]{gupta2016monotonic}
+\begin{barticle}
+\bauthor{\bsnm{Gupta}, \binits{M.}},
+\bauthor{\bsnm{Cotter}, \binits{A.}},
+\bauthor{\bsnm{Pfeifer}, \binits{J.}},
+\bauthor{\bsnm{Voevodski}, \binits{K.}},
+\bauthor{\bsnm{Canini}, \binits{K.}},
+\bauthor{\bsnm{Mangylov}, \binits{A.}},
+\bauthor{\bsnm{Moczydlowski}, \binits{W.}},
+\bauthor{\bsnm{Van~Esbroeck}, \binits{A.}}:
+\batitle{Monotonic calibrated interpolated look-up tables}.
+\bjtitle{Journal of Machine Learning Research}
+\bvolume{17}(\bissue{109}),
+\bfpage{1}--\blpage{47}
+(\byear{2016})
+\end{barticle}
+\endbibitem
+
+%%% 52
+\bibitem[\protect\citeauthoryear{Cano et~al.}{2019}]{cano2019monotonic}
+\begin{barticle}
+\bauthor{\bsnm{Cano}, \binits{J.-R.}},
+\bauthor{\bsnm{Guti{\'e}rrez}, \binits{P.A.}},
+\bauthor{\bsnm{Krawczyk}, \binits{B.}},
+\bauthor{\bsnm{Wo{\'z}niak}, \binits{M.}},
+\bauthor{\bsnm{Garc{\'\i}a}, \binits{S.}}:
+\batitle{Monotonic classification: An overview on algorithms, performance
+  measures and data sets}.
+\bjtitle{Neurocomputing}
+\bvolume{341},
+\bfpage{168}--\blpage{182}
+(\byear{2019})
+\doiurl{10.1016/j.neucom.2019.02.024}
+\end{barticle}
+\endbibitem
+
+%%% 53
+\bibitem[\protect\citeauthoryear{Lundberg and Lee}{2017}]{lundberg2017unified}
+\begin{bchapter}
+\bauthor{\bsnm{Lundberg}, \binits{S.M.}},
+\bauthor{\bsnm{Lee}, \binits{S.-I.}}:
+\bctitle{A unified approach to interpreting model predictions}.
+In: \bbtitle{Advances in Neural Information Processing Systems (NeurIPS)},
+vol. \bseriesno{30},
+pp. \bfpage{4765}--\blpage{4774}
+(\byear{2017})
+\end{bchapter}
+\endbibitem
+
+\end{thebibliography}
