@@ -32,13 +32,13 @@
     clip=false
 ]
 
-% Shaded Test Regime (2021-2022)
-\fill[crimson!8] (axis cs:2020.5,0) rectangle (axis cs:2022,34);
-\node[font=\scriptsize\sffamily\bfseries, color=crimson!85!black, align=center] at (axis cs:2021.25,31.2) {Out-of-Time\\Test ($\tau \in \{2021,22\}$)};
-
 % Shaded Val Regime (2019-2020)
 \fill[amber!8] (axis cs:2018.5,0) rectangle (axis cs:2020.5,34);
-\node[font=\scriptsize\sffamily\bfseries, color=amber!85!black, align=center] at (axis cs:2019.5,31.2) {Validation\\($\tau \in \{2019,20\}$)};
+\node[font=\fontsize{6.5pt}{8pt}\selectfont\sffamily\bfseries, color=amber!85!black, align=center] at (axis cs:2019.5,31.0) {Validation\\$\tau \in \{19,20\}$};
+
+% Shaded Test Regime (2021-2022)
+\fill[crimson!8] (axis cs:2020.5,0) rectangle (axis cs:2022,34);
+\node[font=\fontsize{6.5pt}{8pt}\selectfont\sffamily\bfseries, color=crimson!85!black, align=center] at (axis cs:2021.25,31.0) {Out-of-Time\\$\tau \in \{21,22\}$};
 
 \addplot[color=crimson, very thick, mark=square*, mark size=2pt] coordinates {
     (2009,5.88) (2010,3.61) (2011,6.19) (2012,15.52) (2013,14.26) (2014,11.65) (2015,9.92) (2016,8.11) (2017,9.54) (2018,9.58) (2019,11.49) (2020,13.20) (2021,15.64) (2022,15.91)

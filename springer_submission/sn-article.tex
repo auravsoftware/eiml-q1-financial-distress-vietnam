@@ -40,6 +40,20 @@
 
 \raggedbottom
 
+
+\makeatletter
+\setcounter{topnumber}{8}
+\setcounter{bottomnumber}{8}
+\setcounter{totalnumber}{10}
+\setcounter{dbltopnumber}{3}
+\renewcommand{\topfraction}{0.98}
+\renewcommand{\bottomfraction}{0.98}
+\renewcommand{\dbltopfraction}{0.98}
+\renewcommand{\textfraction}{0.02}
+\renewcommand{\floatpagefraction}{0.85}
+\renewcommand{\dblfloatpagefraction}{0.85}
+\makeatother
+
 \begin{document}
 
 \title[Economics-Informed ML for Corporate Financial Distress Prediction]{Economics-Informed Machine Learning for Corporate Financial Distress Prediction in Emerging Markets: Monotonic Structural Regularization, Forensic Panel Sanitization, and Out-of-Time Crisis Generalization}
@@ -118,7 +132,7 @@ A growing body of literature examines corporate financial distress specifically 
 \caption{Methodological positioning of the proposed EIML framework relative to seminal Q1--Q4 literature across six structural and econometric dimensions.}
 \label{tab:lit_positioning}
 \footnotesize
-\renewcommand{\arraystretch}{1.15}
+\renewcommand{\arraystretch}{1.05}
 %
 \resizebox{\textwidth}{!}{%
 \begin{tabular}{p{4.1cm}p{2.5cm}cccccc}
@@ -158,7 +172,7 @@ Our empirical investigation utilizes a comprehensive raw panel dataset (\texttt{
 \caption{Summary of the 7-step forensic data audit and panel hygiene pipeline executed on the raw Vietnamese corporate panel (2008--2022).}
 \label{tab:forensic_audit}
 \footnotesize
-\renewcommand{\arraystretch}{1.15}
+\renewcommand{\arraystretch}{1.05}
 %
 \resizebox{\textwidth}{!}{%
 \begin{tabular}{clp{6.8cm}r}
@@ -237,7 +251,7 @@ Table~\ref{tab:features} details the $d=18$ financial ratios engineered at year 
 \caption{Taxonomy of the $d=18$ engineered financial ratios, accounting formulas, and structural comparative-static monotonicity axioms $s_j \in \{+1, -1, 0\}$.}
 \label{tab:features}
 \footnotesize
-\renewcommand{\arraystretch}{1.12}
+\renewcommand{\arraystretch}{1.00}
 %
 \resizebox{\textwidth}{!}{%
 \begin{tabular}{lllp{5.2cm}c}
@@ -391,7 +405,7 @@ We evaluate 9 benchmark and proposed models on the out-of-time test cohort $\mat
 \caption{Out-of-time predictive performance and Economic Consistency Score (ECS) on the 2021--2022 test cohort ($N_{\text{test}}=2,083$) across Regime A (Strict Forward Distress $Y_{i,t+1}^{\text{fwd}}$) and Regime B (Persistent Multi-Period Distress $Y_{i,t+1}^{\text{ovl}}$). Bold values highlight best performance within each paradigm.}
 \label{tab:main_results}
 \footnotesize
-\renewcommand{\arraystretch}{1.15}
+\renewcommand{\arraystretch}{1.05}
 %
 \resizebox{\textwidth}{!}{%
 \begin{tabular}{llccccccc}
@@ -452,7 +466,7 @@ To isolate the contribution of each structural component in Equation~(\ref{eq:to
 \caption{Ablation study of structural components in Proposed EINN on the out-of-time test cohort ($Y_{i,t+1}^{\text{fwd}}$, $N_{\text{test}}=2,083$).}
 \label{tab:ablation}
 \footnotesize
-\renewcommand{\arraystretch}{1.15}
+\renewcommand{\arraystretch}{1.05}
 %
 \resizebox{\textwidth}{!}{%
 \begin{tabular}{lcccccc}
@@ -476,7 +490,7 @@ We apply Integrated Gradients \citep{sundararajan2017axiomatic} across all $N_{\
 
 \begin{figure*}[t]
 \centering
-\includegraphics[width=0.98\textwidth]{fig4_monotonic_response.pdf}
+\includegraphics[width=0.82\textwidth]{fig4_monotonic_response.pdf}
 \caption{(a) Ceteris paribus partial response surface of predicted forward distress probability $\hat{p}_{i,t+1}$ (\%) across standardized Debt-to-Assets ($z_{D/A}$) for Proposed EINN, Mono-GBDT, and Unconstrained MLP; (b) Top-8 global feature attribution shares (\%) computed via Integrated Gradients on the 2021--2022 out-of-time test cohort.}
 \label{fig:monotonic_response}
 \end{figure*}
@@ -486,7 +500,7 @@ We apply Integrated Gradients \citep{sundararajan2017axiomatic} across all $N_{\
 \caption{Integrated Gradients global attribution share (\%) and out-of-time gradient sign violation rate (\%) for the top 10 predictors across Proposed EINN and Unconstrained MLP ($N_{\text{test}}=2,083$).}
 \label{tab:xai_ranking}
 \footnotesize
-\renewcommand{\arraystretch}{1.12}
+\renewcommand{\arraystretch}{1.00}
 %
 \resizebox{\textwidth}{!}{%
 \begin{tabular}{clccccc}
@@ -519,7 +533,7 @@ To demonstrate the practical supervisory value of our framework, we examine six 
 \caption{Early-warning audit of six major 2022 Vietnamese corporate bond and regulatory delisting crisis issuers based strictly on fiscal year 2021 statements ($t=2021 \to \tau=2022$). Note that Altman $Z''$-Score falsely classifies all six issuers as ``Safe'' ($Z'' > 2.60$).}
 \label{tab:case_studies}
 \footnotesize
-\renewcommand{\arraystretch}{1.15}
+\renewcommand{\arraystretch}{1.05}
 %
 \resizebox{\textwidth}{!}{%
 \begin{tabular}{llcccccccc}
